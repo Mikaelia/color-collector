@@ -1,12 +1,8 @@
 import React from "react";
-import ReactDOM, { render } from "react-dom";
-import * as serviceWorker from "./serviceWorker";
+import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import storeFactory from "./store";
-
 import App from "./components/App";
-
-import "./index.css";
+import storeFactory from "./store";
 
 const store = storeFactory();
 
@@ -16,5 +12,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-
-serviceWorker.unregister();

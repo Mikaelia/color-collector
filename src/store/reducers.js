@@ -1,4 +1,4 @@
-import C from "./actionTypes";
+import C from "../actionTypes";
 
 export const color = (state = {}, action) => {
   switch (action.type) {
@@ -31,15 +31,6 @@ export const colors = (state = [], action) => {
       return state.map(c => color(c, action));
     case C.REMOVE_COLOR:
       return state.filter(c => c.id !== action.id);
-    default:
-      return state;
-  }
-};
-
-export const sort = (state = "SORTED_BY_DATE", action) => {
-  switch (action.type) {
-    case C.SORT_COLORS:
-      return action.sortBy;
     default:
       return state;
   }

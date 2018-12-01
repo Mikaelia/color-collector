@@ -1,9 +1,7 @@
 import { connect } from "react-redux";
 import AddColorForm from "./ui/AddColorForm";
-import SortMenu from "./ui/SortMenu";
 import ColorList from "./ui/ColorList";
-import { addColor, sortColors, rateColor, removeColor } from "../actions";
-import { sortFunction } from "../lib/array-helpers";
+import { addColor, rateColor, removeColor } from "../actions";
 
 export const NewColor = connect(
   null,
@@ -14,20 +12,9 @@ export const NewColor = connect(
   })
 )(AddColorForm);
 
-export const Menu = connect(
-  state => ({
-    sort: state.sort
-  }),
-  dispatch => ({
-    onSelect(sortBy) {
-      dispatch(sortColors(sortBy));
-    }
-  })
-)(SortMenu);
-
 export const Colors = connect(
   state => ({
-    colors: [...state.colors].sort(sortFunction(state.sort))
+    colors: [...state.colors]
   }),
   dispatch => ({
     onRemove(id) {

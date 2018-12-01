@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../../stylesheets/_addcolorform.scss";
 
 // default function provided to prevent error
 const AddColorForm = ({ onNewColor = f => f }) => {
@@ -18,7 +19,6 @@ const AddColorForm = ({ onNewColor = f => f }) => {
     <form onSubmit={submit}>
       <input
         // set using function because it is stateless,
-        // refs used to capture these 2 values
         ref={input => (_title = input)}
         type="text"
         placeholder="color title..."
