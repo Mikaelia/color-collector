@@ -25,7 +25,7 @@ export const color = (state = {}, action) => {
 export const colors = (state = [], action) => {
   switch (action.type) {
     case C.ADD_COLOR:
-      //uses color reducer
+      //calls color reducer to update color object
       return [...state, color({}, action)];
     case C.RATE_COLOR:
       return state.map(c => color(c, action));
