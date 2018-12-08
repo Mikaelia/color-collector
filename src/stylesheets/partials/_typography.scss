@@ -23,7 +23,10 @@ $heading-font-weight: $font-bold;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: .5rem;
-    display: block;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    overflow: hidden;
+    width: 80%;
 
     &-sm {
         font-size: 2rem;

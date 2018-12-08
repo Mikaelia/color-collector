@@ -1,9 +1,10 @@
 .color-card {
-    height: 27rem;
+    min-height: 27rem;
     width: 100%;
     max-width: 35rem;
     position: relative;
     border-radius: .5rem;
+
 
     box-shadow: $box-shadow-light;
     background: $color-primary-light;
