@@ -1,4 +1,4 @@
-//// Margin Utilities ////
+///-- Margin Utilities -->
 
 // Margin bottom
 .u-mb-sm {
@@ -18,10 +18,24 @@
 }
 
 // Margin top
+.u-mt-sm {
+    margin-top: 2rem;
+}
+
+.u-mt-md {
+    margin-top: 3rem;
+}
+
 .u-mt-lg {
-    margin-top: 8rem;
+    margin-top: 4rem;
 }
 
 .u-mt-hg {
-    margin-top: 10rem;
+    margin-top: 8rem;
+}
+
+/// Conditional Styles -->
+
+.selected {
+    border: 3px solid lighten($color-secondary-light, 25%);
 }

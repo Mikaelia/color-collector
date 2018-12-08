@@ -19,3 +19,7 @@ export const rateColor = (id, rating) => ({
   id,
   rating
 });
+export const selectColor = id => ({
+  type: C.SELECT_COLOR,
+  id
+});

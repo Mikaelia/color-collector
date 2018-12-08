@@ -1,6 +1,7 @@
 const constants = {
   ADD_COLOR: "ADD_COLOR",
   RATE_COLOR: "RATE_COLOR",
+  SELECT_COLOR: "SELECT_COLOR",
   REMOVE_COLOR: "REMOVE_COLOR"
 };
 

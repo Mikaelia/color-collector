@@ -3,14 +3,17 @@ import StarRating from "./StarRating";
 import PropTypes from "prop-types";
 
 const Color = ({
+  selected = false,
   title,
   rating = 0,
   color,
   onRate = f => f,
-  onRemove = f => f
+  onRemove = f => f,
+  toggleSelect = f => f
 }) => (
-  <section className="color-card">
-    <h1 className="heading heading-md light">{title}</h1>
+  <section className={"color-card" + (selected ? " selected" : "")}>
+    <h1 className="heading heading-md light u-mt-sm">{title}</h1>
+    <input type="checkbox" label="color-select" onClick={toggleSelect} />
     <div className="color-card__btn-container">
       <button className="color-card__btn-remove" onClick={onRemove}>
         &times;

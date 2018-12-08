@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import AddColorForm from "./ui/AddColorForm";
 import ColorList from "./ui/ColorList";
-import { addColor, rateColor, removeColor } from "../actions";
+import { addColor, rateColor, removeColor, selectColor } from "../actions";
 
+//NewColor container component
 export const NewColor = connect(
   null,
   dispatch => ({
@@ -12,6 +13,7 @@ export const NewColor = connect(
   })
 )(AddColorForm);
 
+//Color container component
 export const Colors = connect(
   state => ({
     colors: [...state.colors]
@@ -22,6 +24,9 @@ export const Colors = connect(
     },
     onRate(id, rating) {
       dispatch(rateColor(id, rating));
+    },
+    onSelect(id) {
+      dispatch(selectColor(id));
     }
   })
 )(ColorList);

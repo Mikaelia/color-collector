@@ -1,5 +1,5 @@
 .color-card {
-    height: 22rem;
+    height: 27rem;
     width: 100%;
     max-width: 35rem;
     position: relative;
@@ -9,18 +9,22 @@
     background: $color-primary-light;
     transition: all .2s ease-in-out;
 
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 
+    @include respond(phone) {
+        margin-left: 2rem;
+    }
+
     &:hover {
         box-shadow: $box-shadow-dark;
+        background: darken($color-primary-light, 4%);
     }
 
     &__color {
-        height: 5rem;
-        flex-basis: 80%;
+        height: 12rem;
+        width: 80%;
     }
 
     &__btn-container {

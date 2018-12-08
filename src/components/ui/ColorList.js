@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import Color from "./Color";
 
-const ColorList = ({ colors = [], onRate = f => f, onRemove = f => f }) => (
+const ColorList = ({
+  colors = [],
+  onRate = f => f,
+  onRemove = f => f,
+  onSelect = f => f
+}) => (
   <div className="color-list">
     {colors.length === 0 ? (
       <p>No Colors Listed. (Add a Color)</p>
@@ -15,6 +20,7 @@ const ColorList = ({ colors = [], onRate = f => f, onRemove = f => f }) => (
           //Seems you can only call function in app within callback
           onRate={rating => onRate(color.id, rating)}
           onRemove={() => onRemove(color.id)}
+          toggleSelect={() => onSelect(color.id)}
         />
       ))
     )}
