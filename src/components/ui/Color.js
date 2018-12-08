@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import StarRating from "./StarRating";
 import PropTypes from "prop-types";
-import "../../stylesheets/_color.scss";
 
 const Color = ({
   title,
@@ -10,10 +9,14 @@ const Color = ({
   onRate = f => f,
   onRemove = f => f
 }) => (
-  <section className="color">
-    <h1>{title}</h1>
-    <button onClick={onRemove}>X</button>
-    <div className="color" style={{ backgroundColor: color }} />
+  <section className="color-card">
+    <h1 className="heading heading-md light">{title}</h1>
+    <div className="color-card__btn-container">
+      <button className="color-card__btn-remove" onClick={onRemove}>
+        &times;
+      </button>
+    </div>
+    <div className="color-card__color" style={{ backgroundColor: color }} />
     <StarRating starsSelected={rating} onRate={onRate} />
   </section>
 );

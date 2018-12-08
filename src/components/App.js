@@ -1,6 +1,6 @@
 import React from "react";
 import { NewColor, Colors } from "./containers";
-import "../stylesheets/_base.scss";
+import "../stylesheets/main.scss";
 
 const App = () => (
   <div className="app">

@@ -1,0 +1,48 @@
+//-- Fonts -->
+// Weights
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
+// Base Font
+$base-font: 'Quicksand',
+sans-serif;
+$base-font-weight: $font-regular;
+$base-font-size: 1.5rem;
+$base-line-height: 1.4;
+
+//-- Headings -->
+// Weights
+$heading-font-weight: $font-bold;
+
+.heading {
+    font-weight: $font-regular;
+    color: $color-grey-dark;
+    font-family: 'Quicksand',
+        sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .5rem;
+    display: block;
+
+    &-sm {
+        font-size: 2rem;
+    }
+
+    &-md {
+        font-size: 3.5rem;
+    }
+
+    &-lg {
+        font-size: 6rem;
+
+    }
+}
+
+.light {
+    font-weight: $font-light
+}
+
+.bold {
+    font-weight: $font-bold
+}
