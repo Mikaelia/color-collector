@@ -8,7 +8,6 @@ const Color = ({
   title,
   rating = 0,
   color,
-  key,
   onRate = f => f,
   onRemove = f => f,
   toggleSelect = f => f
@@ -29,7 +28,7 @@ const Color = ({
         <RemoveButton />
       </button>
     </div>
-    <h1 className="heading heading-md light u-mt-md">{title}</h1>
+    <h1 className="heading heading-sm f-med u-mt-md">{title}</h1>
     <div className="color-card__color" style={{ backgroundColor: color }} />
     <StarRating starsSelected={rating} onRate={onRate} />
   </section>

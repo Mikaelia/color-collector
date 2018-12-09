@@ -1,7 +1,6 @@
 .styled-checkbox {
-    position: absolute; // take it out of document flow
-    opacity: 0; // hide it
-
+    position: absolute; // remove from document flow
+    opacity: 0; // hide element
 
     &+label {
         position: relative;
@@ -9,7 +8,7 @@
         padding: 0;
     }
 
-    // Box.
+    // Visible checkbox
     &+label:before {
         content: '';
         margin-right: 10px;
@@ -22,17 +21,14 @@
         @include transition;
     }
 
-    // Box hover
     &:hover+label:before {
-        background: $color-secondary-lightest;
+        background: darken($color-grey-utilities, 5%);
     }
 
-    // Box focus
     &:focus+label:before {
         box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
     }
 
-    // Box checked
     &:checked+label:before {
         background: $color-green;
     }

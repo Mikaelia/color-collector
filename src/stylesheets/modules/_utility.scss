@@ -1,6 +1,10 @@
 ///-- Margin Utilities -->
 
 // Margin bottom
+.u-mb-xsm {
+    margin-bottom: 1.5rem;
+}
+
 .u-mb-sm {
     margin-bottom: 2rem;
 }
@@ -41,5 +45,5 @@
 /// Conditional Styles -->
 
 .color-selected {
-    border: 3px solid lighten($color-secondary-light, 25%);
+    border: $outline;
 }

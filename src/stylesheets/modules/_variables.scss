@@ -1,4 +1,4 @@
-$color-red: #900;
+$color-red: rgb(230, 46, 26); //900
 $color-black: black;
 $color-green: lighten(#509e33, 20%);
 
@@ -25,3 +25,7 @@ $break-xl: 2000px;
 // Box Shadows
 $box-shadow-light: 3px 3px 10px rgba($color-grey-dark, .1);
 $box-shadow-dark: 3px 3px 10px rgba($color-grey-dark, .3);
+
+//Border-Radius
+$border-radius: .5rem;
+$outline: 3px solid lighten($color-secondary-light, 25%);

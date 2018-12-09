@@ -1,22 +1,29 @@
-//-- Fonts -->
+/// --- Variables --->
+
+///-- Fonts -->
+
 // Weights
 $font-light: 300;
 $font-regular: 400;
 $font-bold: 700;
 
+// Sizes
+$font-sm: 1rem;
+$font-md: 1.5rem;
+$font-lg: 3.5rem;
+
 // Base Font
 $base-font: 'Quicksand',
 sans-serif;
+$base-font-color: $color-grey-dark;
 $base-font-weight: $font-regular;
-$base-font-size: 1.5rem;
+$base-font-size: $font-md;
 $base-line-height: 1.4;
 
-//-- Headings -->
-// Weights
-$heading-font-weight: $font-bold;
+/// --- Utilities ---> 
 
+//-- Headings -->
 .heading {
-    font-weight: $font-regular;
     color: $color-grey-dark;
     font-family: 'Quicksand',
         sans-serif;
@@ -27,6 +34,11 @@ $heading-font-weight: $font-bold;
     white-space: wrap;
     overflow: hidden;
     width: 80%;
+    font-weight: $font-light;
+
+    &-xsm {
+        font-size: 1.5rem;
+    }
 
     &-sm {
         font-size: 2rem;
@@ -42,10 +54,17 @@ $heading-font-weight: $font-bold;
     }
 }
 
-.light {
+// -- Fonts -->
+
+// Weights
+.f-light {
     font-weight: $font-light
 }
 
-.bold {
+.f-med {
+    font-weight: $font-regular
+}
+
+.f-bold {
     font-weight: $font-bold
 }
