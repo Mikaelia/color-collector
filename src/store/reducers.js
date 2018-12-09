@@ -45,3 +45,33 @@ export const colors = (state = [], action) => {
       return state;
   }
 };
+
+export const pallet = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_PALLET:
+      try {
+        state.map(pallet => {
+          if (pallet.name === action.name) {
+            throw "Name already exists. Please rename pallet";
+          }
+        });
+        return [...state, ...action];
+      } catch (err) {
+        console.log(err);
+        // TODO: Set error state
+        break;
+      }
+    case C.ADD_PALLET_COLOR:
+      return state.map(pallet => {
+        return pallet.name === action.name
+          ? { ...pallet, colors: [...pallet.colors, ...action.colors] }
+          : pallet;
+      });
+    case C.REMOVE_PALLET_COLOR:
+      break;
+    //TODO: Remove palletColot
+    //TODO: set error state
+    default:
+      return state;
+  }
+};
