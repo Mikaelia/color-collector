@@ -1,16 +1,19 @@
 $color-red: #900;
 $color-black: black;
+$color-green: lighten(#509e33, 20%);
 
 // Main Colors
 $color-grey-dark: #5d6063;
 $color-grey-light: #cbcbcb;
+$color-grey-utilities: lighten($color-grey-dark, 50%);
+
 $color-primary-dark: #f1f1f1;
 $color-primary-light: #f5f5f5;
 
 $color-secondary-darkest:#33649e;
 $color-secondary-dark: #3d7cc6;
 $color-secondary-light: #5995da;
-$color-secondary-lightest:#76aeed;
+$color-secondary-lightest:#84b4eb;
 
 
 // Breakpoints

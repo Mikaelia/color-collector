@@ -18,6 +18,10 @@
 }
 
 // Margin top
+.u-mt-xsm {
+    margin-top: 1.5rem;
+}
+
 .u-mt-sm {
     margin-top: 2rem;
 }
@@ -36,6 +40,6 @@
 
 /// Conditional Styles -->
 
-.selected {
+.color-selected {
     border: 3px solid lighten($color-secondary-light, 25%);
 }

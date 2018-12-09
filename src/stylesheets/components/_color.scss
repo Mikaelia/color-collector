@@ -11,8 +11,9 @@
     transition: all .2s ease-in-out;
 
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
 
     @include respond(phone) {
         margin-left: 2rem;
@@ -23,45 +24,66 @@
         background: darken($color-primary-light, 4%);
     }
 
-    &__color {
-        height: 12rem;
-        width: 80%;
+    &__buttons-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
     }
 
-    &__btn-container {
-        position: absolute;
-        top: .5em;
-        right: .5em;
+    &__color {
+        margin: 1.5rem 0;
+        height: 11rem;
+        width: 80%;
+        border-radius: .2rem;
 
-        text-align: right;
+        @include respond(phone) {
+            height: 15rem;
+        }
     }
 
     &__btn-remove,
     &__btn-remove:visited,
     &__btn-remove:active {
-        background: transparent;
-        color: $color-secondary-light;
         border: none;
-        border-radius: .5px;
+        background: transparent;
         cursor: pointer;
-        font-size: 4rem;
         text-decoration: none;
-        line-height: 1rem;
     }
 
-    @media screen and (min-width: $break-sm) {
-        flex-basis: calc(50% - 2em - 4px);
-    }
+    // @media screen and (min-width: $break-sm) {
+    //     flex-basis: calc(50% - 2em - 4px);
+    // }
 
-    @media screen and (min-width: $break-md) {
-        flex-basis: calc(33.33333% - 2em - 4px);
-    }
+    // @media screen and (min-width: $break-md) {
+    //     flex-basis: calc(33.33333% - 2em - 4px);
+    // }
 
-    @media screen and (min-width: $break-lg) {
-        flex-basis: calc(25% - 2em - 4px);
-    }
+    // @media screen and (min-width: $break-lg) {
+    //     flex-basis: calc(25% - 2em - 4px);
+    // }
 
-    @media screen and (min-width: $break-xl) {
-        flex-basis: calc(16.66666% - 2em - 4px);
+    // @media screen and (min-width: $break-xl) {
+    //     flex-basis: calc(16.66666% - 2em - 4px);
+    // }
+}
+
+.remove-button {
+    background: transparent;
+
+    &:hover .cross {
+        fill: $color-red;
+        stroke: $color-red;
+        stroke-width: .8;
     }
+}
+
+.cross {
+    fill: $color-secondary-lightest;
+    stroke: $color-secondary-lightest;
+    transition: all .2s ease;
+    stroke-width: .5;
+    stroke-opacity: 1;
+
+
 }

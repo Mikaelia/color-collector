@@ -4,7 +4,7 @@ import Star from "./Star";
 
 //Obtains total num of stars to display from props
 const StarRating = ({ starsSelected = 0, totalStars = 5, onRate = f => f }) => (
-  <div className="star-rating">
+  <div className="star-rating u-mb-sm">
     {[...Array(totalStars)].map((n, i) => (
       <Star
         key={i}
@@ -13,7 +13,7 @@ const StarRating = ({ starsSelected = 0, totalStars = 5, onRate = f => f }) => (
         onClick={() => onRate(i + 1)}
       />
     ))}
-    <p>
+    <p className="u-mt-lg">
       {starsSelected} of {totalStars} stars
     </p>
   </div>

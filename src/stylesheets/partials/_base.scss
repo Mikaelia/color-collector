@@ -1,5 +1,6 @@
 //Sass environment
 @import '../modules/_all.scss';
+@import 'typography';
 
 *,
 *::after,
@@ -14,6 +15,7 @@ html {
 }
 
 body {
+    font-family: $base-font;
     box-sizing: border-box;
     padding: 3rem;
     background: $color-primary-dark;
