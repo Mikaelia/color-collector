@@ -14,7 +14,7 @@
     justify-content: center;
 
 
-    @include respond(phone) {
+    @include respond(smallest) {
         width: 80%;
     }
 
@@ -32,24 +32,26 @@
 
     &__button {
         font-family: $base-font;
-        font-weight: $font-bold;
+        font-weight: $font-regular;
         color: $base-font-color;
         font-size: 2rem;
+        margin-top: 2rem;
         padding: 2rem;
         width: 100%;
         border-radius: 5rem;
         border: none;
-        background-color: $color-grey-utilities;
+        background-color: $color-grey-lightest;
         transition: all .1s;
 
         &:hover {
             color: $color-primary-light;
-            background: lighten($color-secondary-light, 25%);
+            background: $color-secondary-dark;
         }
     }
 }
 
 input {
+    position: relative;
     margin-bottom: 3rem;
     font-family: $base-font;
     font-size: 2rem;
@@ -59,10 +61,12 @@ input {
     padding: 1rem;
     border: none;
     border-radius: $border-radius;
-    background: $color-grey-utilities;
+    background: $color-grey-lightest;
+
 
     &:focus {
-        border: $outline;
+        background: lighten($color-grey-dark, 10%);
+        color: $color-grey-lightest;
     }
 }
 

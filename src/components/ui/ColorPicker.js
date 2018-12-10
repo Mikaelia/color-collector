@@ -1,6 +1,6 @@
 import React from "react";
 import { SliderPicker } from "react-color";
-import CustomPointer from "./Pointer";
+// import CustomPointer from "./Pointer";
 
 const ColorPicker = ({ setNewColor }) => {
   const handleChangeComplete = color => {
@@ -10,7 +10,7 @@ const ColorPicker = ({ setNewColor }) => {
   return (
     <div className="color-picker">
       <SliderPicker
-        pointer={CustomPointer}
+        //pointer={CustomPointer}
         onChangeComplete={handleChangeComplete}
       />
     </div>

@@ -1,9 +1,10 @@
 import React from "react";
-import { NewColor, Colors } from "./containers";
+import { NewColor, Colors, Pallets } from "./containers";
 import "../stylesheets/main.scss";
 
 const App = () => (
   <div className="app">
+    <Pallets />
     <NewColor />
     <Colors />
   </div>

@@ -23,3 +23,14 @@ export const selectColor = id => ({
   type: C.SELECT_COLOR,
   id
 });
+
+export const savePallet = palletObj => ({
+  type: C.ADD_PALLET,
+  palletObj
+});
+
+export const addPalletColors = (palletName, colors) => ({
+  type: C.ADD_PALLET_COLORS,
+  colors,
+  palletName
+});

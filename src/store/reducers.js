@@ -46,30 +46,29 @@ export const colors = (state = [], action) => {
   }
 };
 
-export const pallet = (state = [], action) => {
+export const pallets = (state = [], action) => {
   switch (action.type) {
     case C.ADD_PALLET:
-      try {
-        state.map(pallet => {
-          if (pallet.name === action.name) {
-            throw "Name already exists. Please rename pallet";
-          }
-        });
-        return [...state, ...action];
-      } catch (err) {
-        console.log(err);
-        // TODO: Set error state
-        break;
-      }
-    case C.ADD_PALLET_COLOR:
-      return state.map(pallet => {
-        return pallet.name === action.name
-          ? { ...pallet, colors: [...pallet.colors, ...action.colors] }
-          : pallet;
-      });
+      // Overwrites pallets with same name
+      const filteredPallets = [...state].filter(
+        pallet => pallet.name !== action.palletObj.name
+      );
+      return [...filteredPallets, action.palletObj];
+
+    // case C.ADD_PALLET_COLORS:
+    //   try {
+    //     return state.map(pallet => {
+    //       return pallet.name === action.name
+    //         ? { ...pallet, colors: [...pallet.colors, ...action.colors] }
+    //         : pallet;
+    //     });
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+
     case C.REMOVE_PALLET_COLOR:
       break;
-    //TODO: Remove palletColot
+    //TODO: Remove palletColot, removePallet
     //TODO: set error state
     default:
       return state;

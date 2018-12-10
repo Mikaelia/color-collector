@@ -30,7 +30,7 @@ const AddColorForm = ({ onNewColor = f => f }) => {
   return (
     <div className="color-saver u-mb-md">
       <section className="color-saver__color-select">
-        <h2 className="heading-md f-light u-mb-md">Choose a Color:</h2>
+        <h2 className="heading-md f-light u-mb-sm">Choose a Color:</h2>
         <ColorPicker setNewColor={setNewColor} />
       </section>
       <p className="heading-xsm u-mb-xsm">Or enter hex...</p>

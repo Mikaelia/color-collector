@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
 
-    @include respond(phone) {
+    @include respond(small) {
         margin-left: 2rem;
     }
 
@@ -37,7 +37,7 @@
         width: 80%;
         border-radius: .2rem;
 
-        @include respond(phone) {
+        @include respond(small) {
             height: 15rem;
         }
     }

@@ -2,7 +2,9 @@ import React from "react";
 
 export const MyPointer = () => {
   return (
-    <div
+    <span
+      aria-label="pointer"
+      role="img"
       style={{
         transform: "translate(-50%, -2.4rem)",
         cursor: "pointer",
@@ -10,7 +12,15 @@ export const MyPointer = () => {
       }}
     >
       ❣️
-    </div>
+    </span>
+  );
+};
+
+export const Heart = () => {
+  return (
+    <span role="img" style={{ fontSize: 32 }} aria-label="heart">
+      ❤️
+    </span>
   );
 };
 

@@ -17,12 +17,12 @@
         width: 2.5rem;
         height: 2.5rem;
         border-radius: .2rem;
-        background: $color-grey-utilities;
+        background: $color-grey-lightest;
         @include transition;
     }
 
     &:hover+label:before {
-        background: darken($color-grey-utilities, 5%);
+        background: ($color-grey-lightest);
     }
 
     &:focus+label:before {
