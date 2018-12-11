@@ -17,6 +17,7 @@
 }
 
 @mixin button() {
+    text-transform: uppercase;
     font-family: $base-font;
     font-weight: $font-regular;
     color: $base-font-color;
@@ -31,6 +32,7 @@
     &:hover {
         color: $color-primary-light;
         background: $color-secondary-dark;
+
     }
 }
 

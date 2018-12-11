@@ -4,21 +4,32 @@ import "../stylesheets/main.scss";
 
 class App extends Component {
   state = {
-    display: true
+    showPalletOptions: true,
+    showPalletGallery: false
   };
 
-  handleToggle = () => {
-    const { display } = this.state;
-    this.setState({ display: !display });
-    console.log({ display });
+  handleToggle = (toggleView = "") => {
+    const { showPalletOptions, showPalletGallery } = this.state;
+    let newState =
+      toggleView === "palette-control"
+        ? { showPalletOptions: !showPalletOptions }
+        : { showPalletGallery: !showPalletGallery };
+
+    this.setState(newState);
   };
 
   render() {
-    const { display } = this.state;
+    const { showPalletOptions, showPalletGallery } = this.state;
     return (
       <div className="app">
-        <NewColor togglePalletDisplay={this.handleToggle} />
-        <Palettes showControls={display} />
+        <NewColor
+          togglePalletDisplay={toggleView => this.handleToggle(toggleView)}
+        />
+        <Palettes
+          togglePalletGallery={this.handleToggle}
+          showPalletOptions={showPalletOptions}
+          showPalletGallery={showPalletGallery}
+        />
         <Colors />
       </div>
     );

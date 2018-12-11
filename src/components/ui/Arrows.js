@@ -16,9 +16,9 @@ export const ArrowUp = ({ fill }) => (
     />
   </svg>
 );
-export const ArrowDown = ({ fill }) => (
+export const ArrowDown = ({ fill, className }) => (
   <svg
-    className="arrow arrow-down"
+    className={`arrow arrow-down + ${className}`}
     xmlns="http://www.w3.org/2000/svg"
     width="20"
     height="20"

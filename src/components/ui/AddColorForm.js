@@ -55,8 +55,12 @@ const AddColorForm = ({
 
           <button className="color-saver__button outline u-mb-xsm">ADD</button>
         </form>
-        <button onClick={togglePalletDisplay} className="text-button">
-          Create New Pallet?
+        <button
+          id="palette-control"
+          onClick={e => togglePalletDisplay(e.target.id)}
+          className="text-button"
+        >
+          Pallet Options?
         </button>
       </section>
     </div>

@@ -3,10 +3,12 @@ import PaletteList from "./PaletteList";
 import Dropdown from "./Dropdown";
 
 const PaletteControls = ({
-  showControls = false,
+  showPalletOptions = false,
+  showPalletGallery = false,
   newPalette = {},
   palettes = [],
   colors = [],
+  togglePalletGallery = f => f,
   onNewPalette = f => f,
   onAddPaletteColors = f => f
 }) => {
@@ -34,11 +36,11 @@ const PaletteControls = ({
     // onAddPalletColors(name, newPallet)
   };
 
-  console.log({ showControls });
+  console.log({ showPalletOptions });
   return (
-    <div className={showControls ? "palette-controls u-mb-md" : "hidden"}>
+    <div className={showPalletOptions ? "palette-controls u-mb-md" : "hidden"}>
       <div className="palette-controls__new-palette">
-        <h2 className="heading-sm u-mb-sm fw-med">Add New Palette</h2>
+        <h2 className="heading-sm u-mb-sm fw-med">Create New Palette</h2>
         <form className="new-palette-form" onSubmit={handleNewPalette}>
           <input
             placeholder="Palette Name"
@@ -46,7 +48,7 @@ const PaletteControls = ({
             ref={input => (_name = input)}
             className="palette-name u-mb-sm"
           />
-          <button className="palette-controls__button u-mb-md">Submit</button>
+          <button className="palette-controls__button u-mb-hg">Submit</button>
         </form>
       </div>
       <div className="palette-controls__update-palette">
@@ -56,14 +58,21 @@ const PaletteControls = ({
 
         <Dropdown title="My Palettes" palettes={palettes} />
         <button
-          className="palette-controls__button u-mt-sm"
+          className="palette-controls__button u-mt-sm u-mb-xsm"
           onSubmit={(palette, colors) => handleUpdatePalette(palette, colors)}
         >
           Update Palette
         </button>
+        <button onClick={togglePalletGallery} className="text-button">
+          Palette View
+        </button>
       </div>
 
-      <div className="palette-controls__palette-view hidden">
+      <div
+        className={
+          showPalletGallery ? "palette-controls__palette-view" : "hidden"
+        }
+      >
         <h2 className="heading-sm fw-med">View Saved Pallets</h2>
         <PaletteList palettes={palettes} />
       </div>
