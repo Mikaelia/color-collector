@@ -1,13 +1,27 @@
-import React from "react";
-import { NewColor, Colors, Pallets } from "./containers";
+import React, { Component } from "react";
+import { NewColor, Colors, Palettes } from "./containers";
 import "../stylesheets/main.scss";
 
-const App = () => (
-  <div className="app">
-    <Pallets />
-    <NewColor />
-    <Colors />
-  </div>
-);
+class App extends Component {
+  state = {
+    display: true
+  };
 
+  handleToggle = () => {
+    const { display } = this.state;
+    this.setState({ display: !display });
+    console.log({ display });
+  };
+
+  render() {
+    const { display } = this.state;
+    return (
+      <div className="app">
+        <NewColor togglePalletDisplay={this.handleToggle} />
+        <Palettes showControls={display} />
+        <Colors />
+      </div>
+    );
+  }
+}
 export default App;

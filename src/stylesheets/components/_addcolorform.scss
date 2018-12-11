@@ -1,8 +1,5 @@
 .color-saver {
-    background: $color-primary-light;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow-light;
-    padding-top: 2rem;
+    @include section-styles;
 
     width: 100%;
     position: relative;
@@ -23,7 +20,7 @@
     }
 
     &__color-form {
-        width: 10rem;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -31,22 +28,7 @@
     }
 
     &__button {
-        font-family: $base-font;
-        font-weight: $font-regular;
-        color: $base-font-color;
-        font-size: 2rem;
-        margin-top: 2rem;
-        padding: 2rem;
-        width: 100%;
-        border-radius: 5rem;
-        border: none;
-        background-color: $color-grey-lightest;
-        transition: all .1s;
-
-        &:hover {
-            color: $color-primary-light;
-            background: $color-secondary-dark;
-        }
+        @include button;
     }
 }
 
@@ -56,20 +38,29 @@ input {
     font-family: $base-font;
     font-size: 2rem;
     text-align: center;
-    color: $color-grey-dark;
     text-transform: uppercase;
     padding: 1rem;
     border: none;
     border-radius: $border-radius;
-    background: $color-grey-lightest;
+    background: $color-primary-dark;
+    transition: all .2s ease-in-out;
 
+    &:hover {
+        background: $color-grey-lightest;
+    }
 
     &:focus {
         background: lighten($color-grey-dark, 10%);
         color: $color-grey-lightest;
     }
+
 }
 
 ::placeholder {
-    color: $color-grey-light
+    color: $color-grey-light;
+
+
+    &:hover {
+        color: white;
+    }
 }

@@ -46,14 +46,14 @@ export const colors = (state = [], action) => {
   }
 };
 
-export const pallets = (state = [], action) => {
+export const palettes = (state = [], action) => {
   switch (action.type) {
     case C.ADD_PALLET:
-      // Overwrites pallets with same name
-      const filteredPallets = [...state].filter(
-        pallet => pallet.name !== action.palletObj.name
+      // Overwrites palettes with same name
+      const filteredPalettes = [...state].filter(
+        palette => palette.name !== action.paletteObj.name
       );
-      return [...filteredPallets, action.palletObj];
+      return [...filteredPalettes, action.paletteObj];
 
     // case C.ADD_PALLET_COLORS:
     //   try {

@@ -22,13 +22,13 @@ const Color = ({
           checked={selected ? "checked" : false}
           onChange={toggleSelect}
         />
-        <label for={`styled-checkbox--${title}`} />
+        <label htmlFor={`styled-checkbox--${title}`} />
       </div>
       <button className="color-card__btn-remove" onClick={onRemove}>
         <RemoveButton />
       </button>
     </div>
-    <h1 className="heading heading-sm f-med u-mt-md">{title}</h1>
+    <h1 className="heading heading-sm fw-med u-mt-md">{title}</h1>
     <div className="color-card__color" style={{ backgroundColor: color }} />
     <StarRating starsSelected={rating} onRate={onRate} />
   </section>

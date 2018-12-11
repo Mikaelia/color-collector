@@ -10,7 +10,7 @@ $font-bold: 700;
 // Sizes
 $font-sm: 1rem;
 $font-md: 1.5rem;
-$font-lg: 3.5rem;
+$font-lg: 2rem;
 
 // Base Font
 $base-font: 'Quicksand',
@@ -57,14 +57,25 @@ $base-line-height: 1.4;
 // -- Fonts -->
 
 // Weights
-.f-light {
+.fw-light {
     font-weight: $font-light
 }
 
-.f-med {
+.fw-med {
     font-weight: $font-regular
 }
 
-.f-bold {
+.fw-bold {
     font-weight: $font-bold
+}
+
+// Text Button
+
+.text-button {
+    border: none;
+    background: transparent;
+    outline: none;
+    text-decoration: none;
+    color: $base-font-color;
+    cursor: pointer;
 }

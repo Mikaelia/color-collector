@@ -16,9 +16,9 @@ export const MyPointer = () => {
   );
 };
 
-export const Heart = () => {
+export const Heart = ({ className }) => {
   return (
-    <span role="img" style={{ fontSize: 32 }} aria-label="heart">
+    <span className={className} role="img" aria-label="heart">
       ❤️
     </span>
   );

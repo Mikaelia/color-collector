@@ -2,6 +2,39 @@
     transition: all .2s ease-in-out;
 }
 
+@mixin flex-column-center() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin section-styles() {
+    background: $color-primary-light;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-light;
+    padding: 3rem 2rem;
+}
+
+@mixin button() {
+    font-family: $base-font;
+    font-weight: $font-regular;
+    color: $base-font-color;
+    font-size: 2rem;
+    padding: 1.5rem;
+    width: 23rem;
+    border-radius: 3rem;
+    border: none;
+    background-color: $color-primary-dark;
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        color: $color-primary-light;
+        background: $color-secondary-dark;
+    }
+}
+
+
 // MEDIA QUERY MANAGER
 /*
 0 - 600px:      Phone

@@ -1,14 +1,14 @@
 import { connect } from "react-redux";
 import AddColorForm from "./ui/AddColorForm";
 import ColorList from "./ui/ColorList";
-import PalletControls from "./ui/PalletControls";
+import PaletteControls from "./ui/PaletteControls";
 import {
   addColor,
   rateColor,
   removeColor,
   selectColor,
-  savePallet,
-  addPalletColors
+  savePalette,
+  addPaletteColors
 } from "../actions";
 
 //NewColor container component
@@ -40,19 +40,19 @@ export const Colors = connect(
   })
 )(ColorList);
 
-//Pallet container component
-// Connect colors and pallets
-export const Pallets = connect(
+//Palette container component
+// Connect colors and palettes
+export const Palettes = connect(
   state => ({
     colors: [...state.colors],
-    pallets: [...state.pallets]
+    palettes: [...state.palettes]
   }),
   dispatch => ({
-    onNewPallet(palletObj) {
-      dispatch(savePallet(palletObj));
+    onNewPalette(paletteObj) {
+      dispatch(savePalette(paletteObj));
     },
-    onAddPalletColor(palletName, color) {
-      dispatch(addPalletColors(palletName, color));
+    onAddPaletteColor(paletteName, color) {
+      dispatch(addPaletteColors(paletteName, color));
     }
   })
-)(PalletControls);
+)(PaletteControls);

@@ -1,65 +1,57 @@
 import React, { Component } from "react";
 import { ArrowUp, ArrowDown } from "./Arrows";
-import { Heart } from "./Pointer";
+import { Heart } from "./Emoji";
 import onClickOutside from "react-onclickoutside";
 
 class Dropdown extends Component {
   state = {
     listOpen: false,
-    headerTitle: this.props.title
-  };
-  resetThenSet = (id, key) => {
-    let temp = JSON.parse(JSON.stringify(this.state[key]));
-    temp.forEach(item => (item.selected = false));
-    temp[id].selected = true;
-    this.setState({
-      [key]: temp
-    });
+    headerTitle: this.props.title,
+    paletteSelected: ""
   };
 
-  handleClickOutside(e) {
+  handleClickOutside = e =>
     this.setState({
       listOpen: false
     });
-  }
 
-  selectItem = (title, id, palletKey) => {
-    this.setState(
-      {
-        headerTitle: title,
-        listOpen: false
-      },
-      this.resetThenSet(id, palletKey)
-    );
+  selectItem = e => {
+    const name = e.target.innerHTML;
+    this.setState({ paletteSelected: name });
   };
-  toggleList() {
+
+  toggleList = () =>
     this.setState(prevState => ({
       listOpen: !prevState.listOpen
     }));
-  }
 
   render() {
-    const { pallets } = this.props;
-    const { listOpen, headerTitle } = this.state;
+    const { palettes } = this.props;
+    const { listOpen, headerTitle, paletteSelected } = this.state;
+    const selected = paletteSelected.trim();
     return (
-      <div className="dd-wrapper">
-        <div className="dd-header" onClick={() => this.toggleList()}>
-          <div className="dd-header-title">{headerTitle}</div>
+      <div className="dd">
+        <div className="dd__header" onClick={this.toggleList}>
+          <div className="dd__header-title heading-sm">{headerTitle}</div>
           {listOpen ? <ArrowUp /> : <ArrowDown />}
         </div>
-
         {listOpen && (
-          <ul className="dd-list">
-            {pallets.map(pallet => (
+          <ul className="dd__list ">
+            {palettes.map(palette => (
               <li
-                className="dd-list-item"
-                key={pallet.name}
-                onClick={() =>
-                  this.selectItem(pallet.name, pallet.name, pallet.name)
+                className={
+                  palette.name === selected
+                    ? "dd__list-item list-item--selected"
+                    : "dd__list-item"
                 }
+                key={palette.name}
+                onClick={this.selectItem}
               >
-                {pallet.name}
-                {pallet.selected && <Heart />}
+                <span className="dd__list-item-name"> {palette.name}</span>
+
+                {palette.name === selected && (
+                  <Heart className="dd__list-heart" />
+                )}
               </li>
             ))}
           </ul>
