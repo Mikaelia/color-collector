@@ -2,9 +2,11 @@ import React from "react";
 import Palette from "./Palette";
 
 const PaletteList = ({ palettes = [] }) => (
-  <div>
+  <div className="palette-view__container">
     {palettes.length === 0 ? (
-      <p>No Palettes Saved. Get collecting!</p>
+      <p className="palette-view__empty-message">
+        No Palettes Saved. Get collecting!
+      </p>
     ) : (
       palettes.map(palette => <Palette key={palette.name} {...palette} />)
     )}

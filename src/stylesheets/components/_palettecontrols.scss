@@ -1,10 +1,10 @@
 .palette-controls {
+    @include flex-column-center;
     @include section-styles;
     padding: 5rem 0 3rem 0;
     background: $color-primary-light;
     width: 100%;
-
-    @include flex-column-center;
+    animation: fade-in-down 1s forwards;
 
     @include respond(smallest) {
         width: 80%;
@@ -23,6 +23,12 @@
 
     &__button {
         @include button;
+    }
+
+    &__palette-gallery {
+        width: 100%;
+        overflow-y: scroll;
+        max-height: 50rem;
     }
 }
 

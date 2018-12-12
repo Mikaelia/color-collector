@@ -4,6 +4,7 @@ import ColorPicker from "./ColorPicker";
 
 // default function provided to prevent error
 const AddColorForm = ({
+  displayOpen,
   togglePalletDisplay = f => f,
   onNewColor = f => f
 }) => {
@@ -53,14 +54,21 @@ const AddColorForm = ({
             required
           />
 
-          <button className="color-saver__button outline u-mb-xsm">ADD</button>
+          <button className="color-saver__button u-mb-md">ADD</button>
         </form>
         <button
           id="palette-control"
-          onClick={e => togglePalletDisplay(e.target.id)}
-          className="text-button"
+          onClick={e => {
+            console.log(displayOpen);
+            togglePalletDisplay(e.target.id);
+          }}
+          className={
+            displayOpen
+              ? "text-button text-button--content-open"
+              : "text-button"
+          }
         >
-          Pallet Options?
+          {!displayOpen ? "Palette Options?" : "Hide Palette Options"}
         </button>
       </section>
     </div>

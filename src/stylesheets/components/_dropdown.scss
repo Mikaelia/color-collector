@@ -1,25 +1,39 @@
 .dd {
+    position: relative;
     background: white;
     display: flex;
     flex-direction: column;
     width: 23rem;
     height: 7rem;
+
     // border: 1px solid $color-grey-lightest;
 
     border-radius: $border-radius;
+
 
     &__header {
         align-items: center;
         justify-content: center;
         height: 100%;
         margin: 1rem 1rem 0 1rem;
-
-
+        background: white;
+        z-index: 10;
     }
 
     &__header-title {
         margin-bottom: 1rem;
     }
+
+    &__list {
+        position: absolute;
+        width: 100%;
+        top: 0rem;
+        background: white;
+        z-index: 5;
+        color: $color-grey-dark;
+        animation: drop .5s linear forwards;
+    }
+
 
     &__list-heart {
         height: 1rem;
@@ -27,11 +41,6 @@
         position: absolute;
         left: 40%;
         top: 25%;
-    }
-
-    &__list {
-        background: white;
-        z-index: 1;
     }
 
     &__list-item {

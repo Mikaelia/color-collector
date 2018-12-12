@@ -58,22 +58,26 @@ const PaletteControls = ({
 
         <Dropdown title="My Palettes" palettes={palettes} />
         <button
-          className="palette-controls__button u-mt-sm u-mb-xsm"
+          className="palette-controls__button u-mt-sm u-mb-md"
           onSubmit={(palette, colors) => handleUpdatePalette(palette, colors)}
         >
           Update Palette
         </button>
-        <button onClick={togglePalletGallery} className="text-button">
-          Palette View
+        <button
+          onClick={togglePalletGallery}
+          className="palette-view__display-button text-button u-mb-md"
+        >
+          View Saved Palettes
         </button>
       </div>
 
       <div
         className={
-          showPalletGallery ? "palette-controls__palette-view" : "hidden"
+          showPalletGallery
+            ? "palette-controls__palette-gallery u-mb-md"
+            : "hidden"
         }
       >
-        <h2 className="heading-sm fw-med">View Saved Pallets</h2>
         <PaletteList palettes={palettes} />
       </div>
     </div>

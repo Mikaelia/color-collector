@@ -36,7 +36,7 @@ class Dropdown extends Component {
           <ArrowDown className={listOpen ? " up" : ""} />
         </div>
         {listOpen && (
-          <ul className="dd__list ">
+          <ul className="dd__list">
             {palettes.map(palette => (
               <li
                 className={

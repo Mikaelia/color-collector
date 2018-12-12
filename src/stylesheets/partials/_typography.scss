@@ -68,14 +68,3 @@ $base-line-height: 1.4;
 .fw-bold {
     font-weight: $font-bold
 }
-
-// Text Button
-
-.text-button {
-    border: none;
-    background: transparent;
-    outline: none;
-    text-decoration: none;
-    color: $base-font-color;
-    cursor: pointer;
-}

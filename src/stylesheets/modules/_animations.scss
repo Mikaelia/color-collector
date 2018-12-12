@@ -1,0 +1,30 @@
+@keyframes drop {
+    0% {
+        top: 0
+    }
+
+    50% {
+        top: 7rem
+    }
+
+    83% {
+        top: 6.5rem;
+
+    }
+
+    100% {
+        top: 7rem;
+    }
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
