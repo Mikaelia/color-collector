@@ -15,9 +15,7 @@ const ColorList = ({
       colors.map(color => (
         <Color
           key={color.id}
-          //shorthand to get all props into Color
           {...color}
-          //Seems you can only call function in app within callback
           onRate={rating => onRate(color.id, rating)}
           onRemove={() => onRemove(color.id)}
           toggleSelect={() => onSelect(color.id)}

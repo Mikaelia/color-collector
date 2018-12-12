@@ -24,13 +24,19 @@ export const selectColor = id => ({
   id
 });
 
+export const selectPalette = id => ({
+  type: C.SELECT_PALETTE,
+  id
+});
+
 export const savePalette = paletteObj => ({
-  type: C.ADD_PALLET,
+  type: C.ADD_PALETTE,
+  id: v4(),
   paletteObj
 });
 
-export const addPaletteColors = (paletteName, colors) => ({
-  type: C.ADD_PALLET_COLORS,
+export const addPaletteColors = (id, colors) => ({
+  type: C.ADD_PALETTE_COLORS,
   colors,
-  paletteName
+  id
 });

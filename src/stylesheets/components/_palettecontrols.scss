@@ -29,6 +29,8 @@
         width: 100%;
         overflow-y: scroll;
         max-height: 50rem;
+
+        animation: fade-in-down 1s forwards;
     }
 }
 

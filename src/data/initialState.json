@@ -4,7 +4,8 @@
             "title": "Ocean Blue",
             "color": "#0070ff",
             "rating": 3,
-            "timestamp": "Sat Mar 12 2016 16:12:09 GMT-0800 (PST)"
+            "timestamp": "Sat Mar 12 2016 16:12:09 GMT-0800 (PST)",
+            "selected": false
         },
         {
             "id": "f9005b4e-975e-433d-a646-79df172e1dbb",
@@ -32,7 +33,9 @@
         }
     ],
     "palettes": [{
+            "id": "a568a5csd39-6bdc-4727-91adsdsdasdfad",
             "name": "Example Palette 1",
+            "selected": false,
             "colors": [{
                     "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
                     "title": "Lawn",
@@ -164,7 +167,9 @@
             ]
         },
         {
+            "id": "a5685c39-6bdc-47ads1adsdsdasdfad",
             "name": "Example Palette 2",
+            "selected": false,
             "colors": [{
                     "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
                     "title": "Lawn",
@@ -192,7 +197,9 @@
             ]
         },
         {
+            "id": "a5685c39-6bdc-4727-91adsdsdasdfad",
             "name": "Example Palette 3",
+            "selected": false,
             "colors": [{
                     "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
                     "title": "Lawn",
@@ -324,7 +331,9 @@
             ]
         },
         {
+            "id": "a5685c39-6bdc-4727-9188-6c9asdasdfad",
             "name": "Example Palette 4",
+            "selected": false,
             "colors": [{
                     "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
                     "title": "Lawn",

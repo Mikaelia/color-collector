@@ -10,30 +10,42 @@ const PaletteControls = ({
   colors = [],
   togglePalletGallery = f => f,
   onNewPalette = f => f,
-  onAddPaletteColors = f => f
+  onAddPaletteColors = f => f,
+  onSelectPalette = f => f
 }) => {
-  let _name;
+  let _newPaletteName;
 
   // Returns list of currently selected colors
-  const getSelectedColors = colors => {
-    return colors.reduce((palette, color) => {
-      return color.selected ? palette.concat(color) : palette;
+  const getSelected = list => {
+    return list.reduce((selectedItems, item) => {
+      return item.selected ? selectedItems.concat(item) : selectedItems;
     }, []);
   };
 
-  // Adds new palette
+  // Creates new palette from selected colors
   const handleNewPalette = e => {
     e.preventDefault();
-    const newPaletteColors = getSelectedColors(colors);
-    const newPalette = { name: _name.value, colors: newPaletteColors };
+    const newPaletteColors = getSelected(colors);
+    const newPalette = {
+      name: _newPaletteName.value,
+      colors: newPaletteColors
+    };
+    _newPaletteName = "Palette Name";
     onNewPalette(newPalette);
   };
 
+  // const handlePaletteSelect = paletteID => {
+  //   _selectedPaletteID = paletteID;
+  // };
+
+  // Adds currently selected colors to existing color palette
   const handleUpdatePalette = () => {
-    //get ref from dropdown to get selected palletName
-    //TODO: make dropdown which fills with pallet names
-    // const newPallet = getSelectedColors(colors);
-    // onAddPalletColors(name, newPallet)
+    console.log(getSelected(palettes));
+    const newColors = getSelected(colors);
+    const selectedPalette = getSelected(palettes);
+    onAddPaletteColors(selectedPalette[0].id, newColors);
+    console.log(selectedPalette);
+    // console.log(`updating palette ${selectedPalette} with ${newColors}`);
   };
 
   console.log({ showPalletOptions });
@@ -45,7 +57,7 @@ const PaletteControls = ({
           <input
             placeholder="Palette Name"
             type="text"
-            ref={input => (_name = input)}
+            ref={input => (_newPaletteName = input)}
             className="palette-name u-mb-sm"
           />
           <button className="palette-controls__button u-mb-hg">Submit</button>
@@ -56,10 +68,14 @@ const PaletteControls = ({
           Add Color(s) to Saved Pallet
         </h2>
 
-        <Dropdown title="My Palettes" palettes={palettes} />
+        <Dropdown
+          title="My Palettes"
+          onSelectPalette={id => onSelectPalette(id)}
+          palettes={palettes}
+        />
         <button
           className="palette-controls__button u-mt-sm u-mb-md"
-          onSubmit={(palette, colors) => handleUpdatePalette(palette, colors)}
+          onClick={(palette, colors) => handleUpdatePalette(palette, colors)}
         >
           Update Palette
         </button>

@@ -1,4 +1,5 @@
 import C from "../actionTypes";
+import Pallet from "../components/ui/Palette";
 
 export const color = (state = {}, action) => {
   switch (action.type) {
@@ -48,25 +49,28 @@ export const colors = (state = [], action) => {
 
 export const palettes = (state = [], action) => {
   switch (action.type) {
-    case C.ADD_PALLET:
+    case C.ADD_PALETTE:
       // Overwrites palettes with same name
       const filteredPalettes = [...state].filter(
         palette => palette.name !== action.paletteObj.name
       );
       return [...filteredPalettes, action.paletteObj];
 
-    // case C.ADD_PALLET_COLORS:
-    //   try {
-    //     return state.map(pallet => {
-    //       return pallet.name === action.name
-    //         ? { ...pallet, colors: [...pallet.colors, ...action.colors] }
-    //         : pallet;
-    //     });
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
+    case C.ADD_PALETTE_COLORS:
+      return state.map(palette => {
+        return palette.id !== action.id
+          ? palette
+          : { ...palette, colors: [...palette.colors, ...action.colors] };
+      });
 
-    case C.REMOVE_PALLET_COLOR:
+    case C.SELECT_PALETTE:
+      return state.map(palette =>
+        palette.id === action.id || palette.selected
+          ? { ...palette, selected: !palette.selected }
+          : palette
+      );
+
+    case C.REMOVE_PALETTE_COLOR:
       break;
     //TODO: Remove palletColot, removePallet
     //TODO: set error state
@@ -74,3 +78,18 @@ export const palettes = (state = [], action) => {
       return state;
   }
 };
+
+// export const palette = (state = {}, action) => {
+//   switch (action.type) {
+
+//     case C.SELECT_PALETTE:
+//       return state.id !== action.id
+//         ? state
+//         : {
+//             ...state,
+//             selected: !state.selected
+//           };
+//     default:
+//       return state;
+//   }
+// };

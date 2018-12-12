@@ -8,7 +8,8 @@ import {
   removeColor,
   selectColor,
   savePalette,
-  addPaletteColors
+  addPaletteColors,
+  selectPalette
 } from "../actions";
 
 //NewColor container component
@@ -41,7 +42,7 @@ export const Colors = connect(
 )(ColorList);
 
 //Palette container component
-// Connect colors and palettes
+// Connected to colors and palettes state
 export const Palettes = connect(
   state => ({
     colors: [...state.colors],
@@ -51,8 +52,11 @@ export const Palettes = connect(
     onNewPalette(paletteObj) {
       dispatch(savePalette(paletteObj));
     },
-    onAddPaletteColor(paletteName, color) {
-      dispatch(addPaletteColors(paletteName, color));
+    onAddPaletteColors(id, colors) {
+      dispatch(addPaletteColors(id, colors));
+    },
+    onSelectPalette(id) {
+      dispatch(selectPalette(id));
     }
   })
 )(PaletteControls);
