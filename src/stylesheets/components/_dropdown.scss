@@ -5,6 +5,7 @@
     flex-direction: column;
     width: 23rem;
     height: 7rem;
+    padding-bottom: 1.5rem;
 
     // border: 1px solid $color-grey-lightest;
 
@@ -15,7 +16,7 @@
         align-items: center;
         justify-content: center;
         height: 100%;
-        margin: 1rem 1rem 0 1rem;
+        width: 100%;
         background: white;
         z-index: 10;
     }
@@ -27,11 +28,11 @@
     &__list {
         position: absolute;
         width: 100%;
-        top: 0rem;
         background: white;
         z-index: 5;
         color: $color-grey-dark;
         animation: drop .5s linear forwards;
+
     }
 
 
@@ -52,6 +53,11 @@
         align-items: flex-start;
         z-index: 1;
         transition: all .3s ease-out;
+        box-shadow: $box-shadow-light;
+
+        &:last-of-type {
+            border-bottom: $color-grey-lightest;
+        }
 
         &:hover {
             background: $color-grey-lightest;
@@ -62,6 +68,11 @@
             font-size: 1.5rem;
         }
 
+    }
+
+    &__list-item:last-child {
+        border-bottom: 1px solid $color-grey-lightest;
+        box-shadow: $box-shadow-light;
     }
 }
 

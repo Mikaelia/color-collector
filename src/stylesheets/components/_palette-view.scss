@@ -42,10 +42,7 @@
 
 .palette-color {
     &__container {
-        display: flex;
-        flex-direction: column;
 
-        align-items: center;
         margin: .5rem;
         height: 100%;
     }
@@ -55,11 +52,51 @@
     }
 
     &__colorbox {
-        width: 100%;
         border-radius: $border-radius;
         height: 3rem;
         width: 3.5rem;
+        transition: all .2s ease-out;
+        @include flex-column-center;
 
+
+        &:hover {
+            box-shadow: $box-shadow-dark;
+            transform: translateY(-3px);
+            transform: scale(3.5);
+
+        }
     }
+
+    &__info-block {
+        @include flex-column-center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        margin: 1;
+
+        & p {
+            width: 100%;
+            transform: scale(.5);
+            visibility: hidden;
+            transition: all .2s ease-in-out;
+
+            padding: 0;
+            line-height: 1;
+
+        }
+
+        &:hover p {
+            visibility: visible;
+            color: white;
+
+            &:hover {
+                color: $color-grey-dark;
+            }
+
+
+        }
+    }
+
+
 
 }
