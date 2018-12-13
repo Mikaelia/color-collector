@@ -1,6 +1,7 @@
 import C from "./actionTypes";
 import { v4 } from "uuid";
 
+/// ---> ColorForm Actions
 export const addColor = (title, color) => ({
   type: C.ADD_COLOR,
   id: v4(),
@@ -9,6 +10,7 @@ export const addColor = (title, color) => ({
   timestamp: new Date().toString()
 });
 
+/// ---> Color List Actions
 export const removeColor = id => ({
   type: C.REMOVE_COLOR,
   id
@@ -24,6 +26,7 @@ export const selectColor = id => ({
   id
 });
 
+/// ---> Palette Actions
 export const selectPalette = id => ({
   type: C.SELECT_PALETTE,
   id
@@ -45,13 +48,14 @@ export const addPaletteColors = (id, colors) => ({
   id
 });
 
+export const selectPColor = (palletId, colorId) => ({
+  type: C.SELECT_PCOLOR,
+  palletId,
+  colorId
+});
+
+/// ---> Component Visibility Actions
 export const toggleVisibility = component => ({
   type: C.TOGGLE_VISIBILITY,
   component
-});
-
-export const selectPColor = (pid, cid) => ({
-  type: C.SELECT_PCOLOR,
-  pid,
-  cid
 });

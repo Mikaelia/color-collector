@@ -1,3 +1,4 @@
+// Container components linking app components to state and actions
 import { connect } from "react-redux";
 import AddColorForm from "./ui/addColorForm/AddColorForm";
 import ColorList from "./ui/colorList/ColorList";
@@ -15,7 +16,7 @@ import {
   removePaletteColors
 } from "../actions";
 
-//NewColor container component
+// Connects visibility state, actions to AddColorForm
 export const NewColor = connect(
   state => ({
     visibility: { ...state.visibility }
@@ -30,9 +31,8 @@ export const NewColor = connect(
   })
 )(AddColorForm);
 
-//Color container component
+// Connects colors + visibility state, actions to ColorList
 export const Colors = connect(
-  //connecting to colors slice of state
   state => ({
     colors: [...state.colors],
     visibility: { ...state.visibility }
@@ -50,8 +50,7 @@ export const Colors = connect(
   })
 )(ColorList);
 
-//Palette container component
-// Connected to colors and palettes state
+// Connects colors, palettes, visibility state to PaletteControls component
 export const Palettes = connect(
   state => ({
     colors: [...state.colors],

@@ -35,12 +35,6 @@ const AddColorForm = ({
 
   return (
     <div className="color-saver u-mb-md">
-      <button
-        onClick={() => {
-          console.log("clicked!");
-          onToggleVisibility();
-        }}
-      />
       <section className="color-saver__color-select">
         <h2 className="heading-md fw-light u-mb-sm">Choose a Color:</h2>
         <ColorPicker setNewColor={setNewColor} />

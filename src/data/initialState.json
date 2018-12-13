@@ -46,7 +46,7 @@
     ],
     "palettes": [{
             "id": "6",
-            "name": "Example Palette 1",
+            "name": "EXAMPLE PALETTE 1",
             "selected": false,
             "colors": [{
                     "id": "7",
@@ -170,7 +170,7 @@
         },
         {
             "id": "22",
-            "name": "Example Palette 2",
+            "name": "EXAMPLE PALETTE 2",
             "selected": false,
             "colors": [{
                     "id": "23",
@@ -216,7 +216,7 @@
         },
         {
             "id": "28",
-            "name": "Example Palette 3",
+            "name": "EXAMPLE PALETTE  3",
             "selected": false,
             "colors": [{
                     "id": "29",
@@ -262,7 +262,7 @@
         },
         {
             "id": "34",
-            "name": "Example Palette 4",
+            "name": "EXAMPLE PALETTE  4",
             "selected": false,
             "colors": [{
                     "id": "35",

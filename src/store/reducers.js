@@ -1,6 +1,16 @@
 import C from "../actionTypes";
-import Pallet from "../components/ui/palletControls/Palette";
 
+/// --> Example Color State
+/*
+{
+  "id": "1",
+  "title": "Cool Blue",
+  "color": "#bde8ff",
+  "rating": 1,
+  "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
+  "selected": false
+}
+ */
 export const color = (state = {}, action) => {
   switch (action.type) {
     case C.ADD_COLOR:
@@ -31,6 +41,17 @@ export const color = (state = {}, action) => {
   }
 };
 
+/// ---> Example Colors State
+/*
+"colors": [{
+            "id": "1",
+            "title": "Cool Blue",
+            "color": "#bde8ff",
+            "rating": 1,
+            "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
+            "selected": false
+        },
+*/
 export const colors = (state = [], action) => {
   switch (action.type) {
     case C.ADD_COLOR:
@@ -47,25 +68,46 @@ export const colors = (state = [], action) => {
   }
 };
 
-/// --> Example State
+/// ---> Example palletColors State
+/*
+{
+  "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+  "title": "Pale Violet",
+  "color": "#dcceff",
+  "rating": 5,
+  "timestamp": "Wed Mar 9 2016 03:26:00 GMT-0800 (PST)",
+  "selected": false
+}
+*/
+export const palletColors = (state = {}, action) => {
+  switch (action.type) {
+    case C.SELECT_PCOLOR:
+      return state.id !== action.colorId
+        ? state
+        : {
+            ...state,
+            selected: !state.selected
+          };
+    default:
+      return state;
+  }
+};
 
-// [{
-//   "name": "Example Palette 1",
-//   "id": "a568a5csd39-6bdc-4727-91adsdsdasdfad",
-//   "selected": false,
-//   "colors": [{
-//           "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
-//           "title": "Pale Pink",
-//           "color": "#efddff",
-//           "rating": 1,
-//           "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
-//           "selected": false
-//       }]
-
-// Actions
-// SELECT_PCOLOR: {type, pid, cid}
-// REMOVE_PALETTE_COLOR: {type, pid}
-
+/// --> Example Palettes State
+/*
+[{
+  "name": "Example Palette 1",
+  "id": "a568a5csd39-6bdc-4727-91adsdsdasdfad",
+  "selected": false,
+  "colors": [{
+          "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+          "title": "Pale Pink",
+          "color": "#efddff",
+          "rating": 1,
+          "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
+          "selected": false
+      }]
+*/
 export const palettes = (state = [], action) => {
   switch (action.type) {
     case C.ADD_PALETTE:
@@ -88,9 +130,9 @@ export const palettes = (state = [], action) => {
 
     case C.SELECT_PCOLOR:
       return state.map(palette => {
-        if (palette.id === action.pid) {
+        if (palette.id === action.palletId) {
           const selectedColors = palette.colors.map(pcolor =>
-            pcolors(pcolor, action)
+            palletColors(pcolor, action)
           );
           return { ...palette, colors: [...selectedColors] };
         } else {
@@ -116,37 +158,12 @@ export const palettes = (state = [], action) => {
   }
 };
 
-/// ---> Example State
-// {
-//   "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
-//   "title": "Pale Violet",
-//   "color": "#dcceff",
-//   "rating": 5,
-//   "timestamp": "Wed Mar 9 2016 03:26:00 GMT-0800 (PST)",
-//   "selected": false
-// }
+/// --> Example Visibility State
 
-export const pcolors = (state = {}, action) => {
-  switch (action.type) {
-    case C.SELECT_PCOLOR:
-      return state.id !== action.cid
-        ? state
-        : {
-            ...state,
-            selected: !state.selected
-          };
-    default:
-      return state;
-  }
-};
-
-/// --> Example State
-
-// "visible" : {
+// "visibility" : {
 //   paletteControls: true,
 //   palettes: true,
 // }
-
 export const visibility = (state = {}, action) => {
   switch (action.type) {
     case C.TOGGLE_VISIBILITY:

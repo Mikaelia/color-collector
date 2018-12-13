@@ -26,7 +26,7 @@ const PaletteControls = ({
     e.preventDefault();
     const newPaletteColors = getSelected(colors);
     const newPalette = {
-      name: _newPaletteName.value,
+      name: _newPaletteName.value.toUpperCase(),
       colors: newPaletteColors
     };
     _newPaletteName = "Palette Name";
@@ -100,13 +100,16 @@ const PaletteControls = ({
             : "hidden"
         }
       >
-        {selectedPColors.length > 1 ? (
-          <button onClick={onRemovePaletteColors}>
-            Remove Colors from Palette?
-          </button>
-        ) : null}
         <PaletteList palettes={palettes} onSelectPColor={onSelectPColor} />
       </div>
+      {selectedPColors.length > 1 ? (
+        <button
+          className="remove-PColor-button"
+          onClick={onRemovePaletteColors}
+        >
+          Remove Colors from Palette?
+        </button>
+      ) : null}
     </div>
   );
 };

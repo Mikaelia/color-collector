@@ -45,3 +45,21 @@
     }
 
 }
+
+.remove-PColor-button {
+    padding: 1rem;
+    border-radius: $border-radius;
+    outline: none;
+    background: $color-primary-dark;
+    border: none;
+    transition: all .2s ease-out;
+
+
+    &:hover {
+        transform: translateY(-.2rem);
+        box-shadow: $box-shadow-dark;
+        background: $color-red;
+        color: white;
+    }
+
+}
