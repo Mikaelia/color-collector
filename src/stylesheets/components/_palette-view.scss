@@ -35,16 +35,25 @@
     &__colors-container {
         display: flex;
         flex-wrap: wrap;
-
     }
-
 }
 
 .palette-color {
     &__container {
-
         margin: .5rem;
         height: 100%;
+        transition: all .2s ease-out;
+        border-radius: $border-radius;
+
+        &:hover {
+            box-shadow: $box-shadow-dark;
+            transform: translateY(-3px);
+            transform: scale(2);
+        }
+
+        &:active {
+            transform: scale(1.5);
+        }
     }
 
     &__name {
@@ -55,16 +64,9 @@
         border-radius: $border-radius;
         height: 3rem;
         width: 3.5rem;
-        transition: all .2s ease-out;
         @include flex-column-center;
 
 
-        &:hover {
-            box-shadow: $box-shadow-dark;
-            transform: translateY(-3px);
-            transform: scale(3.5);
-
-        }
     }
 
     &__info-block {
@@ -75,14 +77,12 @@
         margin: 1;
 
         & p {
-            width: 100%;
-            transform: scale(.5);
+            transform: scale(.7);
             visibility: hidden;
             transition: all .2s ease-in-out;
-
+            text-align: center;
             padding: 0;
             line-height: 1;
-
         }
 
         &:hover p {

@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from "redux";
-import { colors, palettes } from "./reducers";
+import { colors, palettes, visibility } from "./reducers";
 import stateData from "../data/initialState";
 
 // const logger = store => next => action => {
@@ -30,7 +30,8 @@ import stateData from "../data/initialState";
 const initialState = stateData;
 const rootReducer = combineReducers({
   colors,
-  palettes
+  palettes,
+  visibility
 });
 
 const storeFactory = createStore(

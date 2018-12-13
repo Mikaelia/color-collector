@@ -1,25 +1,24 @@
 import React from "react";
 import PaletteList from "./PaletteList";
 import Dropdown from "./Dropdown";
+import { OpenCloseButton } from "../Buttons";
 
 const PaletteControls = ({
-  showPalletOptions = false,
-  showPalletGallery = false,
-  newPalette = {},
   palettes = [],
   colors = [],
-  togglePalletGallery = f => f,
+  visibility = {},
+  onToggleVisibility = f => f,
   onNewPalette = f => f,
   onAddPaletteColors = f => f,
-  onSelectPalette = f => f
+  onSelectPalette = f => f,
+  onSelectPColor = f => f,
+  onRemovePaletteColors = f => f
 }) => {
   let _newPaletteName;
 
   // Returns list of currently selected colors
   const getSelected = list => {
-    return list.reduce((selectedItems, item) => {
-      return item.selected ? selectedItems.concat(item) : selectedItems;
-    }, []);
+    return list.filter(item => item.selected);
   };
 
   // Creates new palette from selected colors
@@ -34,12 +33,9 @@ const PaletteControls = ({
     onNewPalette(newPalette);
   };
 
-  // const handlePaletteSelect = paletteID => {
-  //   _selectedPaletteID = paletteID;
-  // };
-
-  // Adds currently selected colors to existing color palette
+  // Adds selected colors to existing color palette
   const handleUpdatePalette = () => {
+    console.log(palettes, colors);
     console.log(getSelected(palettes));
     const newColors = getSelected(colors);
     const selectedPalette = getSelected(palettes);
@@ -48,9 +44,16 @@ const PaletteControls = ({
     // console.log(`updating palette ${selectedPalette} with ${newColors}`);
   };
 
-  console.log({ showPalletOptions });
+  const selectedPColors = palettes.map(pallet =>
+    pallet.colors.filter(color => color.selected)
+  );
+
   return (
-    <div className={showPalletOptions ? "palette-controls u-mb-md" : "hidden"}>
+    <div
+      className={
+        visibility.paletteControls ? "palette-controls u-mb-md" : "hidden"
+      }
+    >
       <div className="palette-controls__new-palette">
         <h2 className="heading-sm u-mb-sm fw-med">Create New Palette</h2>
         <form className="new-palette-form" onSubmit={handleNewPalette}>
@@ -70,7 +73,10 @@ const PaletteControls = ({
 
         <Dropdown
           title="My Palettes"
-          onSelectPalette={id => onSelectPalette(id)}
+          onSelectPalette={id => {
+            console.log(id);
+            onSelectPalette(id);
+          }}
           palettes={palettes}
         />
         <button
@@ -79,22 +85,27 @@ const PaletteControls = ({
         >
           Update Palette
         </button>
-        <button
-          onClick={togglePalletGallery}
-          className="palette-view__display-button text-button u-mb-md"
-        >
-          View Saved Palettes
-        </button>
+        <OpenCloseButton
+          displayOpen={visibility.palettes}
+          openMessage="View Saved Palettes"
+          closedMessage="Close Palette View"
+          toggleVisibility={onToggleVisibility}
+        />
       </div>
 
       <div
         className={
-          showPalletGallery
-            ? "palette-controls__palette-gallery u-mb-md"
+          visibility.palettes
+            ? "palette-controls__palette-gallery u-mt-md u-mb-md"
             : "hidden"
         }
       >
-        <PaletteList palettes={palettes} />
+        {selectedPColors.length > 1 ? (
+          <button onClick={onRemovePaletteColors}>
+            Remove Colors from Palette?
+          </button>
+        ) : null}
+        <PaletteList palettes={palettes} onSelectPColor={onSelectPColor} />
       </div>
     </div>
   );

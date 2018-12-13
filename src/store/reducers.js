@@ -1,5 +1,5 @@
 import C from "../actionTypes";
-import Pallet from "../components/ui/Palette";
+import Pallet from "../components/ui/palletControls/Palette";
 
 export const color = (state = {}, action) => {
   switch (action.type) {
@@ -47,6 +47,25 @@ export const colors = (state = [], action) => {
   }
 };
 
+/// --> Example State
+
+// [{
+//   "name": "Example Palette 1",
+//   "id": "a568a5csd39-6bdc-4727-91adsdsdasdfad",
+//   "selected": false,
+//   "colors": [{
+//           "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+//           "title": "Pale Pink",
+//           "color": "#efddff",
+//           "rating": 1,
+//           "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
+//           "selected": false
+//       }]
+
+// Actions
+// SELECT_PCOLOR: {type, pid, cid}
+// REMOVE_PALETTE_COLOR: {type, pid}
+
 export const palettes = (state = [], action) => {
   switch (action.type) {
     case C.ADD_PALETTE:
@@ -57,10 +76,26 @@ export const palettes = (state = [], action) => {
       return [...filteredPalettes, action.paletteObj];
 
     case C.ADD_PALETTE_COLORS:
+      const deselectColors = action.colors.map(color => ({
+        ...color,
+        selected: false
+      }));
       return state.map(palette => {
         return palette.id !== action.id
           ? palette
-          : { ...palette, colors: [...palette.colors, ...action.colors] };
+          : { ...palette, colors: [...palette.colors, ...deselectColors] };
+      });
+
+    case C.SELECT_PCOLOR:
+      return state.map(palette => {
+        if (palette.id === action.pid) {
+          const selectedColors = palette.colors.map(pcolor =>
+            pcolors(pcolor, action)
+          );
+          return { ...palette, colors: [...selectedColors] };
+        } else {
+          return palette;
+        }
       });
 
     case C.SELECT_PALETTE:
@@ -71,25 +106,52 @@ export const palettes = (state = [], action) => {
       );
 
     case C.REMOVE_PALETTE_COLOR:
-      break;
-    //TODO: Remove palletColot, removePallet
-    //TODO: set error state
+      return state.map(palette => ({
+        ...palette,
+        colors: [...palette.colors.filter(color => !color.selected)]
+      }));
+
     default:
       return state;
   }
 };
 
-// export const palette = (state = {}, action) => {
-//   switch (action.type) {
+/// ---> Example State
+// {
+//   "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+//   "title": "Pale Violet",
+//   "color": "#dcceff",
+//   "rating": 5,
+//   "timestamp": "Wed Mar 9 2016 03:26:00 GMT-0800 (PST)",
+//   "selected": false
+// }
 
-//     case C.SELECT_PALETTE:
-//       return state.id !== action.id
-//         ? state
-//         : {
-//             ...state,
-//             selected: !state.selected
-//           };
-//     default:
-//       return state;
-//   }
-// };
+export const pcolors = (state = {}, action) => {
+  switch (action.type) {
+    case C.SELECT_PCOLOR:
+      return state.id !== action.cid
+        ? state
+        : {
+            ...state,
+            selected: !state.selected
+          };
+    default:
+      return state;
+  }
+};
+
+/// --> Example State
+
+// "visible" : {
+//   paletteControls: true,
+//   palettes: true,
+// }
+
+export const visibility = (state = {}, action) => {
+  switch (action.type) {
+    case C.TOGGLE_VISIBILITY:
+      return { ...state, [action.component]: !state[action.component] };
+    default:
+      return state;
+  }
+};

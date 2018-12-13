@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ColorPicker from "./ColorPicker";
+import { OpenCloseButton } from "../Buttons";
 
 // default function provided to prevent error
 const AddColorForm = ({
-  displayOpen,
-  togglePalletDisplay = f => f,
+  visibility,
+  onToggleVisibility = () => console.log("hi"),
+  // togglePalletDisplay = f => f,
   onNewColor = f => f
 }) => {
   let _title,
@@ -33,6 +35,12 @@ const AddColorForm = ({
 
   return (
     <div className="color-saver u-mb-md">
+      <button
+        onClick={() => {
+          console.log("clicked!");
+          onToggleVisibility();
+        }}
+      />
       <section className="color-saver__color-select">
         <h2 className="heading-md fw-light u-mb-sm">Choose a Color:</h2>
         <ColorPicker setNewColor={setNewColor} />
@@ -56,20 +64,12 @@ const AddColorForm = ({
 
           <button className="color-saver__button u-mb-md">ADD</button>
         </form>
-        <button
-          id="palette-control"
-          onClick={e => {
-            console.log(displayOpen);
-            togglePalletDisplay(e.target.id);
-          }}
-          className={
-            displayOpen
-              ? "text-button text-button--content-open"
-              : "text-button"
-          }
-        >
-          {!displayOpen ? "Palette Options?" : "Hide Palette Options"}
-        </button>
+        <OpenCloseButton
+          displayOpen={visibility.paletteControls}
+          openMessage="Palette Options?"
+          closedMessage="Hide Palette Options"
+          toggleVisibility={onToggleVisibility}
+        />
       </section>
     </div>
   );

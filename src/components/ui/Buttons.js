@@ -1,6 +1,27 @@
 import React from "react";
 
-const RemoveButton = ({ fill }) => (
+export const OpenCloseButton = ({
+  displayOpen,
+  openMessage,
+  closedMessage,
+  toggleVisibility = f => f
+}) => {
+  return (
+    <button
+      onClick={() => {
+        console.log(displayOpen);
+        toggleVisibility();
+      }}
+      className={
+        displayOpen ? "text-button text-button--content-open" : "text-button"
+      }
+    >
+      {displayOpen ? closedMessage : openMessage}
+    </button>
+  );
+};
+
+export const RemoveButton = ({ fill }) => (
   <svg
     className="remove-button"
     xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +37,3 @@ const RemoveButton = ({ fill }) => (
     />
   </svg>
 );
-
-export default RemoveButton;

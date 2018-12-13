@@ -36,10 +36,25 @@
         height: 11rem;
         width: 80%;
         border-radius: .2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover span {
+            opacity: 1
+        }
 
         @include respond(small) {
             height: 15rem;
         }
+    }
+
+    &__color span {
+        font-weight: $font-light;
+        opacity: 0;
+        font-size: 2rem;
+
+        transition: all .2s ease-out;
     }
 
     &__btn-remove,

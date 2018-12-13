@@ -1,6 +1,6 @@
 import React from "react";
-import StarRating from "./StarRating";
-import RemoveButton from "./RemoveButton";
+import StarRating from "../StarRating";
+import { RemoveButton } from "../Buttons";
 import PropTypes from "prop-types";
 
 const Color = ({
@@ -29,7 +29,9 @@ const Color = ({
       </button>
     </div>
     <h1 className="heading heading-sm fw-med u-mt-md">{title}</h1>
-    <div className="color-card__color" style={{ backgroundColor: color }} />
+    <div className="color-card__color" style={{ backgroundColor: color }}>
+      <span>{color}</span>
+    </div>
     <StarRating starsSelected={rating} onRate={onRate} />
   </section>
 );

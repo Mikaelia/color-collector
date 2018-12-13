@@ -35,8 +35,23 @@ export const savePalette = paletteObj => ({
   paletteObj
 });
 
+export const removePaletteColors = () => ({
+  type: C.REMOVE_PALETTE_COLOR
+});
+
 export const addPaletteColors = (id, colors) => ({
   type: C.ADD_PALETTE_COLORS,
   colors,
   id
+});
+
+export const toggleVisibility = component => ({
+  type: C.TOGGLE_VISIBILITY,
+  component
+});
+
+export const selectPColor = (pid, cid) => ({
+  type: C.SELECT_PCOLOR,
+  pid,
+  cid
 });

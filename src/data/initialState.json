@@ -1,6 +1,10 @@
 {
+    "visibility": {
+        "paletteControls": true,
+        "palettes": true
+    },
     "colors": [{
-            "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+            "id": "1",
             "title": "Cool Blue",
             "color": "#bde8ff",
             "rating": 1,
@@ -8,7 +12,7 @@
             "selected": false
         },
         {
-            "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+            "id": "2",
             "title": "Robin Egg",
             "color": "#bdfcff",
             "rating": 5,
@@ -16,7 +20,7 @@
             "selected": false
         },
         {
-            "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+            "id": "3",
             "title": "Aqua",
             "color": "#bdffdf",
             "rating": 1,
@@ -24,7 +28,7 @@
             "selected": false
         },
         {
-            "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+            "id": "4",
             "title": "Warm Green",
             "color": "#d7ffbd",
             "rating": 5,
@@ -32,7 +36,7 @@
             "selected": false
         },
         {
-            "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+            "id": "5",
             "title": "Sun Yellow",
             "color": "#fffdbd",
             "rating": 1,
@@ -41,11 +45,11 @@
         }
     ],
     "palettes": [{
-            "id": "a568a5csd39-6bdc-4727-91adsdsdasdfad",
+            "id": "6",
             "name": "Example Palette 1",
             "selected": false,
             "colors": [{
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "7",
                     "title": "Pale Pink",
                     "color": "#efddff",
                     "rating": 1,
@@ -53,7 +57,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "8",
                     "title": "Pale Violet",
                     "color": "#dcceff",
                     "rating": 5,
@@ -61,7 +65,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "9",
                     "title": "Pastel Blue",
                     "color": "#add0ff",
                     "rating": 1,
@@ -69,7 +73,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "10",
                     "title": "Light Blue",
                     "color": "#bce2ff",
                     "rating": 5,
@@ -77,14 +81,14 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "11",
                     "title": "Sky Blue",
                     "color": "#cef1ff",
                     "rating": 1,
                     "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
                     "selected": false
                 }, {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "12",
                     "title": "Pale Pink",
                     "color": "#efddff",
                     "rating": 1,
@@ -92,7 +96,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "13",
                     "title": "Pale Violet",
                     "color": "#dcceff",
                     "rating": 5,
@@ -100,7 +104,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "14",
                     "title": "Pastel Blue",
                     "color": "#add0ff",
                     "rating": 1,
@@ -108,7 +112,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "15",
                     "title": "Light Blue",
                     "color": "#bce2ff",
                     "rating": 5,
@@ -116,14 +120,14 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "16",
                     "title": "Sky Blue",
                     "color": "#cef1ff",
                     "rating": 1,
                     "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
                     "selected": false
                 }, {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "17",
                     "title": "Pale Pink",
                     "color": "#efddff",
                     "rating": 1,
@@ -131,7 +135,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "18",
                     "title": "Pale Violet",
                     "color": "#dcceff",
                     "rating": 5,
@@ -139,7 +143,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "19",
                     "title": "Pastel Blue",
                     "color": "#add0ff",
                     "rating": 1,
@@ -147,7 +151,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "20",
                     "title": "Light Blue",
                     "color": "#bce2ff",
                     "rating": 5,
@@ -155,7 +159,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "21",
                     "title": "Sky Blue",
                     "color": "#cef1ff",
                     "rating": 1,
@@ -165,11 +169,11 @@
             ]
         },
         {
-            "id": "a5685c39-6bdc-47ads1adsdsdasdfad",
+            "id": "22",
             "name": "Example Palette 2",
             "selected": false,
             "colors": [{
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "23",
                     "title": "Primary Blue",
                     "color": "#29efff",
                     "rating": 1,
@@ -177,7 +181,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "24",
                     "title": "Primary Blue Dark",
                     "color": "#2dc1e1",
                     "rating": 5,
@@ -185,7 +189,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "25",
                     "title": "Primary Blue Darker",
                     "color": "#36add0",
                     "rating": 1,
@@ -193,7 +197,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "26",
                     "title": "Primary Blue Darkest",
                     "color": "#43b0d0",
                     "rating": 1,
@@ -201,7 +205,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "27",
                     "title": "Secondary Grey",
                     "color": "#d8d8d8",
                     "rating": 1,
@@ -211,11 +215,11 @@
             ]
         },
         {
-            "id": "a5685c39-6bdc-4727-91adsdsdasdfad",
+            "id": "28",
             "name": "Example Palette 3",
             "selected": false,
             "colors": [{
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "29",
                     "title": "Blue",
                     "color": "#bde8ff",
                     "rating": 1,
@@ -223,7 +227,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "30",
                     "title": "Robin Egg",
                     "color": "#bdfcff",
                     "rating": 5,
@@ -231,7 +235,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "31",
                     "title": "Aqua",
                     "color": "#bdffdf",
                     "rating": 1,
@@ -239,7 +243,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "32",
                     "title": "Warm Green",
                     "color": "#d7ffbd",
                     "rating": 5,
@@ -247,7 +251,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "33",
                     "title": "Sun Yellow",
                     "color": "#fffdbd",
                     "rating": 1,
@@ -257,11 +261,11 @@
             ]
         },
         {
-            "id": "a5685c39-6bdc-4727-9188-6c9asdasdfad",
+            "id": "34",
             "name": "Example Palette 4",
             "selected": false,
             "colors": [{
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "35",
                     "title": "Color 1",
                     "color": "#e0fffd",
                     "rating": 1,
@@ -269,7 +273,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "36",
                     "title": "Color 2",
                     "color": "#edcdff",
                     "rating": 5,
@@ -277,7 +281,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "37",
                     "title": "Color 3",
                     "color": "#fff0d5",
                     "rating": 1,
@@ -285,7 +289,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "38",
                     "title": "Color 4",
                     "color": "#ffdcd5",
                     "rating": 5,
@@ -293,7 +297,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "39",
                     "title": "Color 5",
                     "color": "#d4fbd3",
                     "rating": 1,
@@ -301,7 +305,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "40",
                     "title": "Color 1",
                     "color": "#e0fffd",
                     "rating": 1,
@@ -309,7 +313,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "41",
                     "title": "Color 2",
                     "color": "#edcdff",
                     "rating": 5,
@@ -317,7 +321,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "42",
                     "title": "Color 3",
                     "color": "#fff0d5",
                     "rating": 1,
@@ -325,7 +329,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "43",
                     "title": "Color 4",
                     "color": "#ffdcd5",
                     "rating": 5,
@@ -333,7 +337,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "44",
                     "title": "Color 5",
                     "color": "#d4fbd3",
                     "rating": 1,
@@ -341,7 +345,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "45",
                     "title": "Color 1",
                     "color": "#e0fffd",
                     "rating": 1,
@@ -349,7 +353,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "46",
                     "title": "Color 2",
                     "color": "#edcdff",
                     "rating": 5,
@@ -357,7 +361,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "47",
                     "title": "Color 3",
                     "color": "#fff0d5",
                     "rating": 1,
@@ -365,7 +369,7 @@
                     "selected": false
                 },
                 {
-                    "id": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+                    "id": "48",
                     "title": "Color 4",
                     "color": "#ffdcd5",
                     "rating": 5,
@@ -373,7 +377,7 @@
                     "selected": false
                 },
                 {
-                    "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
+                    "id": "49",
                     "title": "Color 5",
                     "color": "#d4fbd3",
                     "rating": 1,
