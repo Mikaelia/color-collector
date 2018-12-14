@@ -67,3 +67,9 @@ $base-font-letter-spacing: .1rem;
 .fw-bold {
     font-weight: $font-bold
 }
+
+// --> Selection -->
+
+*::selection {
+    background: $color-secondary;
+}
