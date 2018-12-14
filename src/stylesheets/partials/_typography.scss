@@ -73,3 +73,12 @@ $base-font-letter-spacing: .1rem;
 *::selection {
     background: $color-secondary;
 }
+
+*::-webkit-scrollbar {
+    background-color: $color-primary-dark;
+    width: .2rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: $color-secondary;
+}
