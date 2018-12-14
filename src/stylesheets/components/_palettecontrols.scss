@@ -5,6 +5,7 @@
     margin-bottom: 6rem;
     background: $color-primary-dark;
     width: 100%;
+    height: 100%;
     animation: fade-in-down 1s forwards;
     position: relative;
     border-top: 2px dashed fade-out($color-white, .8);
@@ -21,6 +22,14 @@
         margin: 0 5rem;
         justify-content: center;
         align-items: space-between;
+        position: relative;
+        padding-top: 22rem;
+
+    }
+
+    &__forms-container {
+        margin-bottom: 4rem;
+        padding: 0 5rem;
     }
 
     &__new-palette {
@@ -33,7 +42,7 @@
         @include flex-column-center;
         text-align: center;
         width: 100%;
-
+        margin-bottom: 7rem;
     }
 
     &__button {
@@ -45,24 +54,36 @@
 
         @include respond(small) {
             width: 80%;
-            margin-left: 9rem;
-
+            height: 60rem;
+            position: relative;
+            margin-top: -9.5rem;
+            margin-left: 8rem;
         }
     }
 
-    &__palette-gallery {
+    &__gallery {
         width: 100%;
         overflow-y: scroll;
         max-height: 50rem;
         background: $color-primary-dark;
         animation: fade-in-down 1s forwards;
+
+
+
     }
 
+    &__heading {
+        @include respond(small) {
+            position: absolute;
+            top: 7rem;
+        }
+    }
 
 }
 
-.palette-name {
 
+.palette-name {
+    margin-bottom: 3rem;
     background: #2e373d;
 }
 

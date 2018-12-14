@@ -1,13 +1,10 @@
 .palette-view {
-
     &__container {
         margin: 0 auto;
         transform: translateX(4px);
         border-radius: $border-radius;
         width: 90%;
         text-align: center;
-
-        padding: 3rem 0;
         background: $color-primary-dark;
 
         display: flex;
@@ -17,6 +14,16 @@
 
     &__empty-message {
         font-size: $font-md;
+    }
+
+    &__heading {
+        font-size: 3.5rem;
+
+        @include respond(small) {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
     }
 
 }
@@ -93,8 +100,6 @@
         &:hover p {
             visibility: visible;
             color: $color-secondary;
-
-
 
 
         }

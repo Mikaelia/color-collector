@@ -54,8 +54,10 @@ const PaletteControls = ({
         visibility.paletteControls ? "palette-controls u-mb-md" : "hidden"
       }
     >
-      <div className="palette-controls_forms-container">
-        <h1 className="heading-md fw-light u-mb-hg">Palette Options</h1>
+      <h1 className="palette-controls__heading heading-md fw-light u-mb-hg">
+        Palette Options
+      </h1>
+      <div className="palette-controls__forms-container">
         <div className="palette-controls__new-palette">
           <h2 className="heading-sm u-mb-sm fw-light">Create New Palette</h2>
           <form className="new-palette-form" onSubmit={handleNewPalette}>
@@ -70,7 +72,7 @@ const PaletteControls = ({
         </div>
         <div className="palette-controls__update-palette">
           <h2 className="heading-sm fw-light u-mb-sm">
-            Add Color(s) to Saved Pallet
+            Add Color(s) to Saved Palette
           </h2>
 
           <Dropdown
@@ -82,7 +84,7 @@ const PaletteControls = ({
             palettes={palettes}
           />
           <button
-            className="palette-controls__button u-mt-sm u-mb-md"
+            className="palette-controls__button u-mb-md"
             onClick={(palette, colors) => handleUpdatePalette(palette, colors)}
           >
             Update Palette
@@ -98,9 +100,7 @@ const PaletteControls = ({
       <div className="palette-controls__gallery-container">
         <div
           className={
-            visibility.palettes
-              ? "palette-controls__palette-gallery u-mt-md u-mb-md"
-              : "hidden"
+            visibility.palettes ? "palette-controls__gallery" : "hidden"
           }
         >
           <PaletteList palettes={palettes} onSelectPColor={onSelectPColor} />

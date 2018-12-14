@@ -4,7 +4,10 @@ import Palette from "./Palette";
 const PaletteList = ({ palettes = [], onSelectPColor }) => {
   return (
     <div className="palette-view__container">
-      <h2 className="heading-sm fw-light u-mb-xsm" style={{ color: {} }}>
+      <h2
+        className="palette-view__heading fw-light u-mb-hg"
+        style={{ color: {} }}
+      >
         Your Palettes
       </h2>
       {palettes.length === 0 ? (
