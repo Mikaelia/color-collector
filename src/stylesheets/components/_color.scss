@@ -22,7 +22,8 @@
 
     &:hover {
         transform: translateY(-.5rem);
-        background: $color-secondary;
+        // background: $color-secondary;
+        background: lighten($color-primary-dark, 10%);
     }
 
     &__buttons-box {
@@ -42,7 +43,8 @@
         align-items: center;
 
         &:hover span {
-            opacity: 1
+            opacity: 1;
+            color: $color-primary-light;
         }
 
         @include respond(small) {

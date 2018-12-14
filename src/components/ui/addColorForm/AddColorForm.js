@@ -17,9 +17,10 @@ const AddColorForm = ({
   const submit = e => {
     e.preventDefault();
     let color;
-    // if colorcode, replace color
+    // if colorcode provided, overwrite default color input
     color = _colorCode.value ? _colorCode.value : _color.hex;
-
+    // Adds hash to hex if not provided
+    color[0] !== "#" && (color = "#".concat(color));
     // Dispatch addColor action
     onNewColor(_title.value, color);
     _title.value = "";
@@ -52,7 +53,8 @@ const AddColorForm = ({
             // set using function because it is stateless,
             ref={input => (_title = input)}
             type="text"
-            placeholder="color name..."
+            id="color-name-input"
+            placeholder="Name your color"
             required
           />
 

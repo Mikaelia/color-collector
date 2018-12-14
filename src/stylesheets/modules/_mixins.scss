@@ -43,17 +43,15 @@
 
 // MEDIA QUERY MANAGER
 /*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
+0 - 500px:      Normal Styles
+500 - 780px:    Smallest
+580px+:         Small
+
 $breakpoint arguement choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-ORDER: Base + typography > general layout + grid > page layout > components
+- smallest
+- small
+
+
 1em = 16px
 */
 
@@ -66,12 +64,6 @@ ORDER: Base + typography > general layout + grid > page layout > components
     }
 
     @if $breakpoint==small {
-        @media only screen and (min-width: 48.75em) {
-            @content
-        }
-    }
-
-    @if $breakpoint==med {
         @media only screen and (min-width: 48.75em) {
             @content
         }

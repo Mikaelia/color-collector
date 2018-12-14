@@ -53,7 +53,17 @@ input {
 
     &:focus {
         background: $color-primary-lightest;
+
+        &:invalid {
+            border: 1px solid $color-pink;
+        }
+
+        &:valid {
+            border: 2px solid $color-green;
+        }
     }
+
+
 
 }
 

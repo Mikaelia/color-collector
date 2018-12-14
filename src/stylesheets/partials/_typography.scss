@@ -1,4 +1,4 @@
-/// --- Variables --->
+/// --- Text Variables --->
 
 ///-- Fonts -->
 
@@ -19,7 +19,7 @@ $base-font-weight: $font-regular;
 $base-line-height: 1.4;
 $base-font-letter-spacing: .1rem;
 
-/// --- Utilities ---> 
+/// --- Text Utilities ---> 
 
 //-- Headings -->
 .heading {
@@ -53,7 +53,7 @@ $base-font-letter-spacing: .1rem;
     }
 }
 
-// -- Fonts -->
+// -- Font Utilities -->
 
 // Weights
 .fw-light {
@@ -68,17 +68,8 @@ $base-font-letter-spacing: .1rem;
     font-weight: $font-bold
 }
 
-// --> Selection -->
+// --> Selection
 
 *::selection {
-    background: $color-secondary;
-}
-
-*::-webkit-scrollbar {
-    background-color: $color-primary-dark;
-    width: .2rem;
-}
-
-*::-webkit-scrollbar-thumb {
     background: $color-secondary;
 }

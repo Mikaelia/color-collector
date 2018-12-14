@@ -16,9 +16,22 @@
     &>:nth-child(odd) {
         background: darken($color-primary-dark, 2%);
 
-        &:hover {
-            background-color: $color-green;
+        & .styled-checkbox:hover+label:before {
+            background: ($color-secondary);
         }
     }
 
+}
+
+
+//// -->  Misc. Universal Styles
+
+// Scrollbar
+*::-webkit-scrollbar {
+    background-color: $color-primary-dark;
+    width: .2rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: $color-secondary;
 }

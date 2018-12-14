@@ -1,5 +1,17 @@
 @import 'variables';
 
+/// Conditional Styles -->
+
+.color-selected {
+    border: $outline;
+    padding: .5rem;
+    border-radius: .7rem;
+}
+
+.hidden {
+    display: none;
+}
+
 ///-- Margin Utilities -->
 
 // Margin bottom
@@ -42,16 +54,4 @@
 
 .u-mt-hg {
     margin-top: 8rem;
-}
-
-/// Conditional Styles -->
-
-.color-selected {
-    border: $outline;
-    padding: .5rem;
-    border-radius: .7rem;
-}
-
-.hidden {
-    display: none;
 }
