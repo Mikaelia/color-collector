@@ -35,7 +35,7 @@
 
 input {
     position: relative;
-    margin-bottom: 3rem;
+    margin: 0 2rem 3rem 2rem;
     font-family: $base-font;
     font-size: 2rem;
     text-align: center;
@@ -47,7 +47,7 @@ input {
     transition: all .2s ease-out;
 
     &:hover {
-        background: darken($color-primary-dark, 2%);
+        background: lighten($color-primary-dark, 7%);
 
     }
 

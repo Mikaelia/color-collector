@@ -5,19 +5,19 @@
     position: relative;
     border-radius: .5rem;
     margin: 1.5rem;
+    z-index: 0;
 
 
     box-shadow: $box-shadow-dark;
     background: $color-primary-dark;
     transition: all .2s ease-in-out;
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-column-center;
+
 
     @include respond(small) {
         margin-left: 2rem;
+        flex-basis: calc(50% - 2em - 4px);
     }
 
     &:hover {
@@ -81,19 +81,21 @@
         stroke-opacity: 1;
     }
 
-    // @media screen and (min-width: $break-sm) {
-    //     flex-basis: calc(50% - 2em - 4px);
-    // }
 
-    // @media screen and (min-width: $break-md) {
-    //     flex-basis: calc(33.33333% - 2em - 4px);
-    // }
-
-    // @media screen and (min-width: $break-lg) {
-    //     flex-basis: calc(25% - 2em - 4px);
-    // }
-
-    // @media screen and (min-width: $break-xl) {
-    //     flex-basis: calc(16.66666% - 2em - 4px);
-    // }
 }
+
+// @media screen and (min-width: $break-sm) {
+//     flex-basis: calc(50% - 2em - 4px);
+// }
+
+// @media screen and (min-width: $break-md) {
+//     flex-basis: calc(33.33333% - 2em - 4px);
+// }
+
+// @media screen and (min-width: $break-lg) {
+//     flex-basis: calc(25% - 2em - 4px);
+// }
+
+// @media screen and (min-width: $break-xl) {
+//     flex-basis: calc(16.66666% - 2em - 4px);
+// }

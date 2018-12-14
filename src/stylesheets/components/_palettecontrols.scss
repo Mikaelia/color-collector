@@ -3,16 +3,24 @@
     @include section-styles;
     padding: 7rem 0 5rem 0;
     margin-bottom: 6rem;
-    background: $color-primary-light;
+    background: $color-primary-dark;
     width: 100%;
     animation: fade-in-down 1s forwards;
     position: relative;
-    border-top: 2px dashed fade-out($color-white, .5);
-    border-bottom: 2px dashed fade-out($color-white, .5);
-
+    border-top: 2px dashed fade-out($color-white, .8);
+    border-bottom: 2px dashed fade-out($color-white, .8);
 
     @include respond(smallest) {
         width: 80%;
+    }
+
+    @include respond(small) {
+        width: 100%;
+        flex-direction: row;
+        padding: 5rem;
+        margin: 0 5rem;
+        justify-content: center;
+        align-items: space-between;
     }
 
     &__new-palette {
@@ -32,6 +40,16 @@
         @include button;
     }
 
+    &__gallery-container {
+        @include flex-column-center;
+
+        @include respond(small) {
+            width: 80%;
+            margin-left: 9rem;
+
+        }
+    }
+
     &__palette-gallery {
         width: 100%;
         overflow-y: scroll;
@@ -41,6 +59,11 @@
     }
 
 
+}
+
+.palette-name {
+
+    background: #2e373d;
 }
 
 .new-palette-form {

@@ -54,62 +54,66 @@ const PaletteControls = ({
         visibility.paletteControls ? "palette-controls u-mb-md" : "hidden"
       }
     >
-      <div className="palette-controls__new-palette">
-        <h2 className="heading-sm u-mb-sm fw-light">Create New Palette</h2>
-        <form className="new-palette-form" onSubmit={handleNewPalette}>
-          <input
-            placeholder="Palette Name..."
-            type="text"
-            ref={input => (_newPaletteName = input)}
-            className="palette-name u-mb-sm"
+      <div className="palette-controls_forms-container">
+        <h1 className="heading-md fw-light u-mb-hg">Palette Options</h1>
+        <div className="palette-controls__new-palette">
+          <h2 className="heading-sm u-mb-sm fw-light">Create New Palette</h2>
+          <form className="new-palette-form" onSubmit={handleNewPalette}>
+            <input
+              placeholder="Palette Name..."
+              type="text"
+              ref={input => (_newPaletteName = input)}
+              className="palette-name u-mb-sm"
+            />
+            <button className="palette-controls__button u-mb-hg">Submit</button>
+          </form>
+        </div>
+        <div className="palette-controls__update-palette">
+          <h2 className="heading-sm fw-light u-mb-sm">
+            Add Color(s) to Saved Pallet
+          </h2>
+
+          <Dropdown
+            title="My Palettes"
+            onSelectPalette={id => {
+              console.log(id);
+              onSelectPalette(id);
+            }}
+            palettes={palettes}
           />
-          <button className="palette-controls__button u-mb-hg">Submit</button>
-        </form>
+          <button
+            className="palette-controls__button u-mt-sm u-mb-md"
+            onClick={(palette, colors) => handleUpdatePalette(palette, colors)}
+          >
+            Update Palette
+          </button>
+          <OpenCloseButton
+            displayOpen={visibility.palettes}
+            openMessage="View Saved Palettes"
+            closedMessage="Close Palette View"
+            toggleVisibility={onToggleVisibility}
+          />
+        </div>
       </div>
-      <div className="palette-controls__update-palette">
-        <h2 className="heading-sm fw-light u-mb-sm">
-          Add Color(s) to Saved Pallet
-        </h2>
-
-        <Dropdown
-          title="My Palettes"
-          onSelectPalette={id => {
-            console.log(id);
-            onSelectPalette(id);
-          }}
-          palettes={palettes}
-        />
-        <button
-          className="palette-controls__button u-mt-sm u-mb-md"
-          onClick={(palette, colors) => handleUpdatePalette(palette, colors)}
+      <div className="palette-controls__gallery-container">
+        <div
+          className={
+            visibility.palettes
+              ? "palette-controls__palette-gallery u-mt-md u-mb-md"
+              : "hidden"
+          }
         >
-          Update Palette
-        </button>
-        <OpenCloseButton
-          displayOpen={visibility.palettes}
-          openMessage="View Saved Palettes"
-          closedMessage="Close Palette View"
-          toggleVisibility={onToggleVisibility}
-        />
+          <PaletteList palettes={palettes} onSelectPColor={onSelectPColor} />
+        </div>
+        {selectedPColors.length > 1 && visibility.palettes ? (
+          <button
+            className="remove-PColor-button"
+            onClick={onRemovePaletteColors}
+          >
+            Remove Colors from Palette?
+          </button>
+        ) : null}
       </div>
-
-      <div
-        className={
-          visibility.palettes
-            ? "palette-controls__palette-gallery u-mt-md u-mb-md"
-            : "hidden"
-        }
-      >
-        <PaletteList palettes={palettes} onSelectPColor={onSelectPColor} />
-      </div>
-      {selectedPColors.length > 1 && visibility.palettes ? (
-        <button
-          className="remove-PColor-button"
-          onClick={onRemovePaletteColors}
-        >
-          Remove Colors from Palette?
-        </button>
-      ) : null}
     </div>
   );
 };

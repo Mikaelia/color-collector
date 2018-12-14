@@ -20,12 +20,12 @@ body {
     letter-spacing: $base-font-letter-spacing;
     font-weight: $base-font-weight;
     box-sizing: border-box;
-    background-color: #374046;
+    background-color: $color-primary-light;
     color: $base-font-color;
 
 }
 
-
 input {
     outline: none;
+    color: $color-green;
 }

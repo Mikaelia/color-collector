@@ -12,7 +12,6 @@
 @mixin section-styles() {
     background: $color-primary-light;
     border-radius: $border-radius;
-    box-shadow: $box-shadow-light;
     padding: 3rem 2rem;
 }
 
@@ -28,7 +27,7 @@
     border: none;
     background-color: $color-secondary;
     transition: all .1s ease-in-out;
-    box-shadow: $box-shadow-light;
+    box-shadow: $box-shadow-dark;
 
     &:hover {
         background: $color-green;
@@ -67,6 +66,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
     }
 
     @if $breakpoint==small {
+        @media only screen and (min-width: 48.75em) {
+            @content
+        }
+    }
+
+    @if $breakpoint==med {
         @media only screen and (min-width: 48.75em) {
             @content
         }
