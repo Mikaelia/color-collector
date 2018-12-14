@@ -13,7 +13,7 @@
 ![alt text](./screenshots/colorCardView.png)
 ![alt text](./screenshots/shredLoginPage.png)
 
-## How to Use:
+### How to Use:
 
 - Adjust slider and choose color from gradient options below, OR
   enter hex code of the color that you'd like to save.
@@ -57,6 +57,20 @@ _Future_
 - React
 - Redux
 - CSS/SASS
+
+### Running Locally
+
+#### Clone or Download
+
+`git clone https://github.com/Mikaelia/color-collector`
+
+#### Install Dependencies
+
+`npm install`
+
+#### Start Application
+
+`npm start`
 
 #### Background
 
@@ -115,17 +129,3 @@ All actions are stored in `actions.js` and are connected to my top-level compone
 These container components are finally composed in the `App.js` file.
 
 These top-level components each have their own subfolders within the `ui` folder, that houses my React components
-
-### Running Locally
-
-#### Clone or Download
-
-`git clone https://github.com/Mikaelia/color-collector`
-
-#### Install Dependencies
-
-`npm install`
-
-#### Start Application
-
-`npm start`
