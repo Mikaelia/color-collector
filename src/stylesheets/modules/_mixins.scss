@@ -20,19 +20,24 @@
     text-transform: uppercase;
     font-family: $base-font;
     font-weight: $font-regular;
-    color: $base-font-color;
+    color: $button-color-light;
     font-size: 2rem;
     padding: 1.5rem;
     width: 23rem;
     border-radius: 3rem;
     border: none;
-    background-color: $color-primary-dark;
+    background-color: $color-secondary;
     transition: all .1s ease-in-out;
+    box-shadow: $box-shadow-light;
 
     &:hover {
-        color: $color-primary-light;
-        background: $color-secondary-light;
+        background: $color-green;
+        transform: translateY(-.3rem);
+        box-shadow: $box-shadow-dark;
+    }
 
+    &:active {
+        transform: translateY(.2rem);
     }
 }
 

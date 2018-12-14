@@ -34,12 +34,12 @@ const AddColorForm = ({
   };
 
   return (
-    <div className="color-saver u-mb-md">
-      <section className="color-saver__color-select">
-        <h2 className="heading-md fw-light u-mb-sm">Choose a Color:</h2>
+    <div className="color-saver">
+      <section className="color-saver__color-select ">
+        <h2 className="heading-md fw-light u-mt-lg u-mb-lg">Choose a Color:</h2>
         <ColorPicker setNewColor={setNewColor} />
       </section>
-      <p className="heading-xsm u-mb-xsm">Or enter hex...</p>
+      <p className="heading-sm fw-light u-mb-xsm">Or enter hex...</p>
       <section className="color-saver__color-form">
         <form onSubmit={submit}>
           <input

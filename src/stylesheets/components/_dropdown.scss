@@ -1,30 +1,26 @@
 .dd {
     position: relative;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    width: 23rem;
     padding-top: 1rem;
-    height: 8rem;
     padding-bottom: 1.5rem;
-
-    // border: 1px solid $color-grey-lightest;
+    height: 8rem;
+    width: 24rem;
+    border-top: 2px dashed $color-green;
 
     border-radius: $border-radius;
-
+    background: $color-white;
+    text-transform: uppercase;
+    color: $color-primary-dark;
+    display: flex;
+    flex-direction: column;
 
     &__header {
-
         position: relative;
-        align-items: center;
-        justify-content: center;
         height: 100%;
         width: 100%;
-        background: white;
+        background: $color-white;
         z-index: 10;
         border-top-right-radius: .5rem;
         border-top-left-radius: .5rem;
-
     }
 
     &__header-title {
@@ -34,13 +30,11 @@
     &__list {
         position: absolute;
         width: 100%;
-        background: white;
+        background: $color-white;
         z-index: 5;
-        color: $color-grey-dark;
         animation: drop .5s linear forwards;
         box-shadow: 1px 5px 5px rgba(128, 128, 128, 0.158);
         border-radius: .5rem;
-
     }
 
 
@@ -61,15 +55,17 @@
         align-items: flex-start;
         z-index: 1;
         transition: all .3s ease-out;
-        box-shadow: 0px 2px 3px rgba(128, 128, 128, 0.075);
+        border-bottom: 2px solid rgba(128, 128, 128, 0.075);
 
         &:last-of-type {
             border-bottom-right-radius: .5rem;
             border-bottom-left-radius: .5rem;
+            box-shadow: 0px 2px 3px rgba(128, 128, 128, 0.075);
+
         }
 
         &:hover {
-            background: $color-grey-lightest;
+            background: lighten($color-primary-light, 50%);
         }
 
         &-name {

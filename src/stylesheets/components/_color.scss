@@ -4,10 +4,11 @@
     max-width: 35rem;
     position: relative;
     border-radius: .5rem;
+    margin: 1.5rem;
 
 
-    box-shadow: $box-shadow-light;
-    background: $color-primary-light;
+    box-shadow: $box-shadow-dark;
+    background: $color-primary-dark;
     transition: all .2s ease-in-out;
 
     display: flex;
@@ -20,8 +21,8 @@
     }
 
     &:hover {
-        box-shadow: $box-shadow-dark;
-        background: white;
+        transform: translateY(-.5rem);
+        background: $color-secondary;
     }
 
     &__buttons-box {
@@ -57,6 +58,8 @@
         transition: all .2s ease-out;
     }
 
+    // Remove button styles
+
     &__btn-remove,
     &__btn-remove:visited,
     &__btn-remove:active {
@@ -64,6 +67,18 @@
         background: transparent;
         cursor: pointer;
         text-decoration: none;
+
+        &:hover .cross {
+            fill: $color-red;
+            stroke: $color-red;
+            stroke-width: .5;
+        }
+    }
+
+    .cross {
+        fill: $color-secondary;
+        transition: all .2s ease;
+        stroke-opacity: 1;
     }
 
     // @media screen and (min-width: $break-sm) {
@@ -81,22 +96,4 @@
     // @media screen and (min-width: $break-xl) {
     //     flex-basis: calc(16.66666% - 2em - 4px);
     // }
-}
-
-.remove-button {
-    background: transparent;
-
-    &:hover .cross {
-        fill: $color-red;
-        stroke: $color-red;
-        stroke-width: .5;
-    }
-}
-
-.cross {
-    fill: $color-secondary-lightest;
-    transition: all .2s ease;
-    stroke-opacity: 1;
-
-
 }

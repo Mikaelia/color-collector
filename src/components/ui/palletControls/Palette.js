@@ -4,7 +4,7 @@ import PaletteColor from "./PaletteColor";
 
 const Pallet = ({ name, colors, onSelect = f => f }) => (
   <div className="palette__container">
-    <h3 className="palette__name u-mt-md">{name}</h3>
+    <h3 className="palette__name u-mb-xsm">{name}</h3>
     <div className="palette__colors-container">
       {colors.map(color => (
         <PaletteColor

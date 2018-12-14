@@ -13,20 +13,19 @@ $font-md: 1.5rem;
 $font-lg: 2rem;
 
 // Base Font
-$base-font: 'Quicksand',
+$base-font: 'Roboto',
 sans-serif;
-$base-font-color: $color-grey-dark;
 $base-font-weight: $font-regular;
-$base-font-size: $font-md;
 $base-line-height: 1.4;
+$base-font-letter-spacing: .1rem;
 
 /// --- Utilities ---> 
 
 //-- Headings -->
 .heading {
-    color: $color-grey-dark;
-    font-family: 'Quicksand',
+    font-family: 'Roboto',
         sans-serif;
+    font-weight: $font-light;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: .5rem;

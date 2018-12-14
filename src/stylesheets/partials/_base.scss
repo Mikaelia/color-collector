@@ -17,12 +17,14 @@ html {
 
 body {
     font-family: $base-font;
+    letter-spacing: $base-font-letter-spacing;
+    font-weight: $base-font-weight;
     box-sizing: border-box;
-    padding: 3rem;
-    background: $color-primary-dark;
+    background-color: #374046;
     color: $base-font-color;
 
 }
+
 
 input {
     outline: none;

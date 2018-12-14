@@ -9,6 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 3rem;
 
 
     @include respond(smallest) {
@@ -46,18 +47,19 @@ input {
     transition: all .2s ease-out;
 
     &:hover {
-        background: $color-grey-lightest;
+        background: darken($color-primary-dark, 2%);
+
     }
 
     &:focus {
-        background: lighten($color-grey-dark, 10%);
-        color: $color-grey-lightest;
+        background: $color-primary-lightest;
     }
 
 }
 
 ::placeholder {
-    color: $color-grey-light;
+    font-size: 1.8rem;
+    color: fade-out($color-white, .5);
 
 
     &:hover {

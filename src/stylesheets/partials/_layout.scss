@@ -13,13 +13,12 @@
     text-align: center;
     width: 95%;
 
-
-
     &>:nth-child(odd) {
-        background: $color-primary-light;
+        background: darken($color-primary-dark, 2%);
+
+        &:hover {
+            background-color: $color-green;
+        }
     }
 
-    &>:not(:last-child) {
-        margin-bottom: 2rem;
-    }
 }

@@ -1,24 +1,15 @@
 .palette-controls {
     @include flex-column-center;
     @include section-styles;
-    padding: 5rem 0 3rem 0;
+    padding: 7rem 0 5rem 0;
+    margin-bottom: 6rem;
     background: $color-primary-light;
     width: 100%;
     animation: fade-in-down 1s forwards;
     position: relative;
+    border-top: 2px dashed fade-out($color-white, .5);
+    border-bottom: 2px dashed fade-out($color-white, .5);
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 9.3rem;
-
-        width: 80%;
-        height: 4rem;
-        background: linear-gradient(rgba(255, 255, 255, 0.001),
-            white);
-        /* transparent keyword is broken in Safari */
-        pointer-events: none;
-    }
 
     @include respond(smallest) {
         width: 80%;
@@ -27,12 +18,14 @@
     &__new-palette {
         @include flex-column-center;
         width: 100%;
+        margin-bottom: 4rem;
     }
 
     &__update-palette {
         @include flex-column-center;
         text-align: center;
         width: 100%;
+
     }
 
     &__button {
@@ -43,12 +36,11 @@
         width: 100%;
         overflow-y: scroll;
         max-height: 50rem;
-
+        background: $color-primary-dark;
         animation: fade-in-down 1s forwards;
-
-
-
     }
+
+
 }
 
 .new-palette-form {

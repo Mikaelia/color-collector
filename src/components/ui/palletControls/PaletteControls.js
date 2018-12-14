@@ -55,10 +55,10 @@ const PaletteControls = ({
       }
     >
       <div className="palette-controls__new-palette">
-        <h2 className="heading-sm u-mb-sm fw-med">Create New Palette</h2>
+        <h2 className="heading-sm u-mb-sm fw-light">Create New Palette</h2>
         <form className="new-palette-form" onSubmit={handleNewPalette}>
           <input
-            placeholder="Palette Name"
+            placeholder="Palette Name..."
             type="text"
             ref={input => (_newPaletteName = input)}
             className="palette-name u-mb-sm"
@@ -67,7 +67,7 @@ const PaletteControls = ({
         </form>
       </div>
       <div className="palette-controls__update-palette">
-        <h2 className="heading-sm fw-med u-mb-sm">
+        <h2 className="heading-sm fw-light u-mb-sm">
           Add Color(s) to Saved Pallet
         </h2>
 
@@ -102,7 +102,7 @@ const PaletteControls = ({
       >
         <PaletteList palettes={palettes} onSelectPColor={onSelectPColor} />
       </div>
-      {selectedPColors.length > 1 ? (
+      {selectedPColors.length > 1 && visibility.palettes ? (
         <button
           className="remove-PColor-button"
           onClick={onRemovePaletteColors}

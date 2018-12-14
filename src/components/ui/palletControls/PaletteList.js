@@ -4,7 +4,9 @@ import Palette from "./Palette";
 const PaletteList = ({ palettes = [], onSelectPColor }) => {
   return (
     <div className="palette-view__container">
-      <h2 className="heading-sm fw-med">Your Palettes</h2>
+      <h2 className="heading-sm fw-light u-mb-xsm" style={{ color: {} }}>
+        Your Palettes
+      </h2>
       {palettes.length === 0 ? (
         <p className="palette-view__empty-message">
           No Palettes Saved. Get collecting!

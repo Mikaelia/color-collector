@@ -17,12 +17,12 @@
         width: 2.5rem;
         height: 2.5rem;
         border-radius: .2rem;
-        background: $color-grey-lightest;
+        background: $color-primary-light;
         @include transition;
     }
 
     &:hover+label:before {
-        background: ($color-grey-lightest);
+        background: ($color-primary-light);
     }
 
     &:focus+label:before {
