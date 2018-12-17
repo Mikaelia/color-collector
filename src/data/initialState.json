@@ -1,4 +1,9 @@
 {
+    "alerts": [{
+        "text": "Welcome!",
+        "style": "alert--welcome",
+        "id": "12343"
+    }],
     "visibility": {
         "paletteControls": true,
         "palettes": true

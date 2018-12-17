@@ -37,7 +37,7 @@ class Dropdown extends Component {
     return (
       <div className="dd">
         <div className="dd__header" onClick={this.toggleList}>
-          <div className="dd__header-title heading-sm">{headerTitle}</div>
+          <div className="dd__header-title">{headerTitle}</div>
           <ArrowDown className={listOpen ? " up" : ""} />
         </div>
         {listOpen && (

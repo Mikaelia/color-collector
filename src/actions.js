@@ -59,3 +59,21 @@ export const toggleVisibility = component => ({
   type: C.TOGGLE_VISIBILITY,
   component
 });
+
+/// --> Alert Actions
+// style -> success, fail?
+export const addAlert = (text, style) => {
+  return {
+    type: "ADD_ALERT",
+    text,
+    style,
+    id: v4()
+  };
+};
+
+export const removeAlert = id => {
+  return {
+    type: "REMOVE_ALERT",
+    id
+  };
+};

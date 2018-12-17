@@ -28,7 +28,12 @@ const Color = ({
         <RemoveButton />
       </button>
     </div>
-    <h1 className="heading heading-sm fw-med u-mt-md">{title}</h1>
+    <h1
+      style={{ textTransform: "uppercase" }}
+      className="heading--sm fw-light u-mt-md"
+    >
+      {title}
+    </h1>
     <div className="color-card__color" style={{ backgroundColor: color }}>
       <span>{color}</span>
     </div>

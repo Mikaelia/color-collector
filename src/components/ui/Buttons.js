@@ -1,6 +1,7 @@
 import React from "react";
 
 export const OpenCloseButton = ({
+  id,
   displayOpen,
   openMessage,
   closedMessage,
@@ -12,6 +13,7 @@ export const OpenCloseButton = ({
         console.log(displayOpen);
         toggleVisibility();
       }}
+      id={id}
       className={
         displayOpen ? "text-button text-button--content-open" : "text-button"
       }

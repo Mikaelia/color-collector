@@ -6,10 +6,12 @@
     height: 8rem;
     width: 24rem;
     border-top: 2px dashed $color-secondary;
+    border-bottom: 2px dashed $color-secondary;
 
     border-radius: $border-radius;
     background: $color-white;
     text-transform: uppercase;
+    font-size: $font-md;
     color: $color-primary-dark;
     display: flex;
     flex-direction: column;

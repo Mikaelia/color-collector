@@ -3,29 +3,44 @@ import PropTypes from "prop-types";
 import ColorPicker from "./ColorPicker";
 import { OpenCloseButton } from "../Buttons";
 
-// default function provided to prevent error
 const AddColorForm = ({
   visibility,
   onToggleVisibility = () => console.log("hi"),
-  // togglePalletDisplay = f => f,
-  onNewColor = f => f
+  onNewColor = f => f,
+  addAlert = f => f
 }) => {
   let _title,
     _color = { hex: "#000000" },
     _colorCode;
 
-  const submit = e => {
-    e.preventDefault();
+  const checkEmptyInput = (value, message) => {
+    if (value === "") {
+      addAlert(message, "alert--error");
+      return true;
+    }
+  };
+
+  const validateInput = () => {
     let color;
-    // if colorcode provided, overwrite default color input
-    color = _colorCode.value ? _colorCode.value : _color.hex;
-    // Adds hash to hex if not provided
-    color[0] !== "#" && (color = "#".concat(color));
-    // Dispatch addColor action
-    onNewColor(_title.value, color);
-    _title.value = "";
-    _color.hex = "#000000";
-    _title.focus();
+    if (!checkEmptyInput(_title.value, "Please Provide Color Name")) {
+      // If hex provided, overwrite default color input
+      color = _colorCode.value ? _colorCode.value : _color.hex;
+      // Prepends hash to hex if not provided
+      color[0] !== "#" && (color = "#".concat(color));
+      return color;
+    }
+  };
+
+  const colorFormSubmit = e => {
+    e.preventDefault();
+    const color = validateInput();
+    if (color) {
+      onNewColor(_title.value, color);
+      addAlert("Color Submitted!", "alert--success");
+      _title.value = "";
+      _color.hex = "#000000";
+      _title.focus();
+    }
   };
 
   // Color is an object with keys:
@@ -37,25 +52,26 @@ const AddColorForm = ({
   return (
     <div className="color-saver">
       <section className="color-saver__color-select ">
-        <h2 className="heading-md fw-light u-mt-lg u-mb-lg">Choose a Color:</h2>
+        <h2 className="heading--md fw-light u-mt-lg u-mb-lg">Choose a Color</h2>
         <ColorPicker setNewColor={setNewColor} />
       </section>
-      <p className="heading-sm fw-light u-mb-xsm">Or enter hex...</p>
+      <p className="heading--sm fw-light u-mb-lg">Or enter hex:</p>
       <section className="color-saver__color-form">
-        <form onSubmit={submit}>
+        <form onSubmit={colorFormSubmit}>
           <input
             placeholder="#fff"
             ref={input => (_colorCode = input)}
             type="text"
           />
-
+          <p className="heading--sm fw-light u-mb-lg u-mt-lg">
+            Name your color
+          </p>
           <input
             // set using function because it is stateless,
             ref={input => (_title = input)}
             type="text"
             id="color-name-input"
-            placeholder="Name your color"
-            required
+            placeholder="Color Name"
           />
 
           <button className="color-saver__button u-mb-md">ADD</button>

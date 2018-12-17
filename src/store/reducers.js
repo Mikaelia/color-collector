@@ -1,4 +1,5 @@
 import C from "../actionTypes";
+import { v4 } from "uuid";
 
 /// --> Example Color State
 /*
@@ -168,6 +169,32 @@ export const visibility = (state = {}, action) => {
   switch (action.type) {
     case C.TOGGLE_VISIBILITY:
       return { ...state, [action.component]: !state[action.component] };
+    default:
+      return state;
+  }
+};
+
+export const alerts = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_ALERT":
+      return [
+        ...state,
+        {
+          text: action.text,
+          style: action.style,
+          id: v4()
+        }
+      ];
+
+    case "REMOVE_ALERT":
+      return state.filter(alert => {
+        if (alert.id === action.id) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+
     default:
       return state;
   }

@@ -1,0 +1,85 @@
+.alert-container {
+    @include flex-column-center;
+    animation: 4s slide-in;
+    margin-top: 1rem;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: -35rem;
+
+}
+
+.alert {
+    font-size: 2rem;
+    height: 2rem;
+    width: 100%;
+    color: white;
+    font-weight: $font-light;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+
+    &--success {
+        border: 2px solid lighten($color-green, 8%);
+        background: $color-green;
+    }
+
+    &--error {
+        border: 2px solid lighten($color-pink, 8%);
+        background: $color-pink;
+        margin-bottom: 1rem;
+    }
+
+    &--welcome {
+        background: $color-yellow;
+    }
+}
+
+.alert-icon {
+
+
+    &--sad {
+        opacity: 0;
+        animation: wave 1s 1s;
+
+        @include respond(smallest) {
+            opacity: 1;
+        }
+
+        & path {
+            fill: $color-pink;
+
+
+        }
+    }
+
+    &--happy {
+        opacity: 0;
+        animation: wave 1s 1s;
+
+        @include respond(smallest) {
+            opacity: 1;
+        }
+
+        & path {
+            fill: $color-green;
+        }
+    }
+
+    &--wave {
+        opacity: 0;
+        animation: wave 1s 1s;
+
+        @include respond(smallest) {
+            opacity: 1;
+        }
+
+        & path {
+            fill: $color-yellow;
+        }
+    }
+}

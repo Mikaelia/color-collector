@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from "redux";
-import { colors, palettes, visibility } from "./reducers";
+import { colors, palettes, visibility, alerts } from "./reducers";
 import stateData from "../data/initialState";
 
 const initialState = stateData;
@@ -8,7 +8,8 @@ const initialState = stateData;
 const rootReducer = combineReducers({
   colors,
   palettes,
-  visibility
+  visibility,
+  alerts
 });
 
 // Connects store to reducers, initial state data, Redux devtools

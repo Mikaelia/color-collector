@@ -12,9 +12,17 @@ const PaletteControls = ({
   onAddPaletteColors = f => f,
   onSelectPalette = f => f,
   onSelectPColor = f => f,
-  onRemovePaletteColors = f => f
+  onRemovePaletteColors = f => f,
+  addAlert = f => f
 }) => {
   let _newPaletteName;
+
+  const checkEmptyInput = (value, message) => {
+    if (value === "") {
+      addAlert(message, "alert--error");
+      return true;
+    }
+  };
 
   // Returns list of currently selected colors
   const getSelected = list => {
@@ -24,19 +32,19 @@ const PaletteControls = ({
   // Creates new palette from selected colors
   const handleNewPalette = e => {
     e.preventDefault();
-    const newPaletteColors = getSelected(colors);
-    const newPalette = {
-      name: _newPaletteName.value.toUpperCase(),
-      colors: newPaletteColors
-    };
-    _newPaletteName = "Palette Name";
-    onNewPalette(newPalette);
+    if (!checkEmptyInput(_newPaletteName.value, "Palette Name Required")) {
+      const newPaletteColors = getSelected(colors);
+      const newPalette = {
+        name: _newPaletteName.value.toUpperCase(),
+        colors: newPaletteColors
+      };
+      _newPaletteName = "Palette Name";
+      onNewPalette(newPalette);
+    }
   };
 
   // Adds selected colors to existing color palette
   const handleUpdatePalette = () => {
-    console.log(palettes, colors);
-    console.log(getSelected(palettes));
     const newColors = getSelected(colors);
     const selectedPalette = getSelected(palettes);
     onAddPaletteColors(selectedPalette[0].id, newColors);
@@ -54,12 +62,18 @@ const PaletteControls = ({
         visibility.paletteControls ? "palette-controls u-mb-md" : "hidden"
       }
     >
-      <h1 className="palette-controls__heading heading-md fw-light u-mb-hg">
+      <h1 className="palette-controls__heading heading--md fw-light u-mb-hg">
         Palette Options
       </h1>
       <div className="palette-controls__forms-container">
         <div className="palette-controls__new-palette">
-          <h2 className="heading-sm u-mb-sm fw-light">Create New Palette</h2>
+          <h2
+            style={{ textAlign: "center" }}
+            className="heading--xsm u-mb-lg fw-light"
+          >
+            Select Colors
+            <br /> + <br /> Create Palette
+          </h2>
           <form className="new-palette-form" onSubmit={handleNewPalette}>
             <input
               placeholder="Palette Name..."
@@ -71,8 +85,10 @@ const PaletteControls = ({
           </form>
         </div>
         <div className="palette-controls__update-palette">
-          <h2 className="heading-sm fw-light u-mb-sm">
-            Add Color(s) to Saved Palette
+          <h2 className="heading--xsm fw-light u-mb-lg">
+            Select Colors
+            <br /> + <br />
+            Add to Palette
           </h2>
 
           <Dropdown
@@ -90,6 +106,7 @@ const PaletteControls = ({
             Update Palette
           </button>
           <OpenCloseButton
+            id="show-palette-gallery"
             displayOpen={visibility.palettes}
             openMessage="View Saved Palettes"
             closedMessage="Close Palette View"
@@ -98,6 +115,11 @@ const PaletteControls = ({
         </div>
       </div>
       <div className="palette-controls__gallery-container">
+        {visibility.palettes ? (
+          <h2 className="heading--sm palette-view__heading fw-light u-mb-lg">
+            Your Palettes
+          </h2>
+        ) : null}
         <div
           className={
             visibility.palettes ? "palette-controls__gallery" : "hidden"

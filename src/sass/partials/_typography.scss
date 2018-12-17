@@ -22,32 +22,41 @@ $base-font-letter-spacing: .1rem;
 /// --- Text Utilities ---> 
 
 //-- Headings -->
-.heading {
+%heading {
     font-family: 'Roboto',
         sans-serif;
     font-weight: $font-light;
-    text-transform: uppercase;
     text-align: center;
+    line-height: 2.5rem;
     letter-spacing: .5rem;
     text-overflow: ellipsis;
     white-space: wrap;
     overflow: hidden;
-    width: 80%;
     font-weight: $font-light;
+    margin-left: 0;
+    margin-right: 0;
+}
 
-    &-xsm {
+.heading {
+
+    &--xsm {
+        @extend %heading;
         font-size: 1.5rem;
     }
 
-    &-sm {
+    &--sm {
+        @extend %heading;
         font-size: 2rem;
     }
 
-    &-md {
+    &--md {
+        @extend %heading;
         font-size: 3.5rem;
+        line-height: 3.5rem;
     }
 
-    &-lg {
+    &--lg {
+        @extend %heading;
         font-size: 6rem;
 
     }

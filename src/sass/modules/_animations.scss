@@ -1,0 +1,79 @@
+@keyframes drop {
+    0% {
+        top: 1rem;
+    }
+
+    50% {
+        top: 7rem
+    }
+
+    83% {
+        top: 6.5rem;
+
+    }
+
+    100% {
+        top: 6.7rem;
+    }
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        left: -25rem;
+    }
+
+    30% {
+        left: 1rem;
+    }
+
+    70% {
+        left: 1rem;
+    }
+
+    90% {
+        left: -35rem;
+    }
+
+    100% {
+        left: -35rem;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    70% {
+        transform: rotate(-20deg);
+    }
+
+    90% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transfomr: rotate(0);
+    }
+
+}

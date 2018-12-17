@@ -1,6 +1,7 @@
 /// ---> Color Variables
 
 // Accessory Colors
+$color-yellow: #FFC107;
 $color-red: rgb(230, 46, 26); //900
 $color-pink: #e91e63;
 $color-black: black;
@@ -30,7 +31,7 @@ $box-shadow-dark: 3px 3px 10px rgba(0, 0, 0, 0.192);
 $border-radius: .2rem;
 
 // Outline Style
-$outline: 3px solid lighten($color-green, 20%);
+$outline: 2px solid lighten($color-green, 20%);
 
 // Breakpoints
 $break-sm: 700px;

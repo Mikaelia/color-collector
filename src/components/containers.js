@@ -1,5 +1,6 @@
 // Container components linking app components to state and actions
 import { connect } from "react-redux";
+import React from "react";
 import AddColorForm from "./ui/addColorForm/AddColorForm";
 import ColorList from "./ui/colorList/ColorList";
 import PaletteControls from "./ui/palletControls/PaletteControls";
@@ -13,8 +14,11 @@ import {
   selectPalette,
   toggleVisibility,
   selectPColor,
-  removePaletteColors
+  removePaletteColors,
+  removeAlert,
+  addAlert
 } from "../actions";
+import AlertsOverlayComponent from "./AlertsOverlay";
 
 // Connects visibility state, actions to AddColorForm
 export const NewColor = connect(
@@ -22,11 +26,15 @@ export const NewColor = connect(
     visibility: { ...state.visibility }
   }),
   dispatch => ({
+    // Here we are binding out action creators
     onToggleVisibility() {
       dispatch(toggleVisibility("paletteControls"));
     },
     onNewColor(title, color) {
       dispatch(addColor(title, color));
+    },
+    addAlert(text, style) {
+      dispatch(addAlert(text, style));
     }
   })
 )(AddColorForm);
@@ -75,6 +83,21 @@ export const Palettes = connect(
     },
     onRemovePaletteColors() {
       dispatch(removePaletteColors());
+    },
+    addAlert(text, style) {
+      dispatch(addAlert(text, style));
     }
   })
 )(PaletteControls);
+
+export const Alerts = connect(
+  state => ({
+    alerts: [...state.alerts]
+  }),
+  dispatch => ({
+    removeAlert(id) {
+      dispatch(removeAlert(id));
+    }
+  })
+  // connects removeAlert to overlay
+)(AlertsOverlayComponent);
