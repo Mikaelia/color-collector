@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 
 export const OpenCloseButton = ({
   id,
   displayOpen,
-  openMessage,
-  closedMessage,
+  openMessage = "",
+  closedMessage = "",
   toggleVisibility = f => f
 }) => {
   return (
@@ -39,3 +39,39 @@ export const RemoveButton = ({ fill }) => (
     />
   </svg>
 );
+
+/// ---> Scroll to Specified Element Button
+/*
+This button takes children, scrollTargetMessage, scrollTargetElement as props.
+It will return a conditionally styled button with a message on hover telling user where they 
+will be directed.
+
+It will take a component with a variable onClick function as a child. In this app,
+various SVG Icon direction-indicating components are used
+*/
+export class ScrollButton extends Component {
+  scrollMe = element =>
+    document.querySelector(element).scrollIntoView({
+      behavior: "smooth"
+    });
+  render() {
+    const {
+      children = {},
+      scrollTargetMessage = "",
+      scrollTargetElement = ""
+    } = this.props;
+    const childrenWithProps = React.Children.map(children, child =>
+      React.cloneElement(child, {
+        onClick: () => this.scrollMe(scrollTargetElement),
+        className: "scroll-button__icon"
+      })
+    );
+    return (
+      <div className="scroll-button">
+        <span className="scroll-button__heading">To</span>
+        {childrenWithProps}
+        <span className="scroll-button__heading">{scrollTargetMessage}</span>
+      </div>
+    );
+  }
+}

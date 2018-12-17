@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ArrowDown } from "../Arrows";
+import { ArrowDown } from "../LayoutIcons";
 import { Heart } from "../Emoji";
 import onClickOutside from "react-onclickoutside";
 import v4 from "uuid";

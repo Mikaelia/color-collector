@@ -5,25 +5,6 @@
     position: relative;
 }
 
-// Color container
-.color-list {
-    display: flex;
-    // boxes automatically wrap on window resize
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-    width: 95%;
-
-    &>:nth-child(odd) {
-        background: darken($color-primary-dark, 2%);
-
-        & .styled-checkbox:hover+label:before {
-            background: ($color-secondary);
-        }
-    }
-}
-
-
 //// -->  Misc. Universal Styles
 
 // Scrollbar

@@ -1,3 +1,5 @@
+/// ---> Text Buttons
+
 .text-button {
     position: relative;
     letter-spacing: .5rem;
@@ -45,6 +47,7 @@
 }
 
 
+/// --->  Remove Palette Color Button
 
 .remove-PColor-button {
     margin-top: 3rem;
@@ -56,14 +59,49 @@
     border: none;
     transition: all .2s ease-out;
 
-
-
-
     &:hover {
         transform: translateY(-.2rem);
         box-shadow: $box-shadow-dark;
         background: $color-red;
         color: white;
+    }
+
+}
+
+/// ---> Scroll to Element on Click button
+
+
+
+.scroll-button {
+    @include flex-column-center;
+
+    &:hover .scroll-button__heading {
+        opacity: 1;
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        margin-bottom: .5rem;
+
+        @include respond(medium) {
+            height: 3rem;
+            width: 4rem;
+        }
+
+        & path {
+            fill: $color-pink;
+        }
+    }
+
+    &__heading {
+        opacity: 0;
+        transition: all .2s ease-in;
+        color: $color-pink;
+        text-transform: uppercase;
     }
 
 }

@@ -1,0 +1,46 @@
+// Color container
+.color-list {
+    display: flex;
+    // boxes automatically wrap on window resize
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 95%;
+    position: relative;
+
+    &>:nth-child(odd) {
+        background: darken($color-primary-dark, 2%);
+
+        & .styled-checkbox:hover+label:before {
+            background: ($color-secondary);
+        }
+    }
+
+    &__scroll-button-container--top {
+        display: flex;
+        position: fixed;
+        top: 5rem;
+        right: 50%;
+        background: transparent !important;
+
+        @include respond(smallest) {
+            display: block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        @include respond(medium) {
+            right: -1rem;
+        }
+    }
+
+    &__scroll-button-container--bottom {
+        @include respond(smallest) {
+            position: absolute;
+            bottom: 3rem;
+            right: 2rem;
+        }
+
+    }
+}

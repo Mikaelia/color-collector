@@ -15,7 +15,7 @@
         width: 80%;
     }
 
-    @include respond(small) {
+    @include respond(medium) {
         width: 100%;
         flex-direction: row;
         padding: 5rem;
@@ -52,7 +52,7 @@
     &__gallery-container {
         @include flex-column-center;
 
-        @include respond(small) {
+        @include respond(medium) {
             width: 80%;
             height: 60rem;
             position: relative;
@@ -68,15 +68,32 @@
         background: $color-primary-dark;
         animation: fade-in-down 1s forwards;
 
-
-
     }
 
     &__heading {
-        @include respond(small) {
+        @include respond(medium) {
             position: absolute;
             top: 7rem;
         }
+    }
+
+    &__scroll-button-container {
+
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        background: transparent !important;
+
+        @include respond(smallest) {
+            top: 1rem;
+            right: 1rem;
+        }
+
+        @include respond(medium) {
+            right: 2rem;
+        }
+
+
     }
 
 }

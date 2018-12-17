@@ -1,7 +1,7 @@
 import React from "react";
 import { NewColor, Colors, Palettes, Alerts } from "./containers";
 
-import "../stylesheets/main.scss";
+import "../sass/main.scss";
 
 const App = () => (
   <div className="app">
