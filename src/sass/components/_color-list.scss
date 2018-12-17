@@ -17,20 +17,22 @@
     }
 
     &__scroll-button-container--top {
+        position: absolute;
         display: flex;
-        top: 5rem;
-        right: 50%;
+        top: -3rem;
+
+        right: calc(50% - 4rem);
         background: transparent !important;
 
         @include respond(smallest) {
             display: block;
             position: absolute;
             top: 1rem;
-            right: 1rem;
+            right: 0rem;
         }
 
         @include respond(medium) {
-            right: -1rem;
+            right: -2rem;
         }
     }
 
