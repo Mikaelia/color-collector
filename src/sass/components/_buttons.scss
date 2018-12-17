@@ -75,6 +75,10 @@
 .scroll-button {
     @include flex-column-center;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &:hover .scroll-button__heading {
         opacity: 1;
     }
