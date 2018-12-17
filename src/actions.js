@@ -38,6 +38,11 @@ export const savePalette = paletteObj => ({
   paletteObj
 });
 
+export const removePalette = id => ({
+  type: C.REMOVE_PALETTE,
+  id
+});
+
 export const removePaletteColors = () => ({
   type: C.REMOVE_PALETTE_COLOR
 });

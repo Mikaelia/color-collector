@@ -117,7 +117,8 @@ export const palettes = (state = [], action) => {
         palette => palette.name !== action.paletteObj.name
       );
       return [...filteredPalettes, action.paletteObj];
-
+    case C.REMOVE_PALETTE:
+      return state.filter(palette => palette.id !== action.id);
     case C.ADD_PALETTE_COLORS:
       const deselectColors = action.colors.map(color => ({
         ...color,

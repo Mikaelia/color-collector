@@ -60,28 +60,6 @@
         transition: all .2s ease-out;
     }
 
-    // Remove button styles
-
-    &__btn-remove,
-    &__btn-remove:visited,
-    &__btn-remove:active {
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        text-decoration: none;
-
-        &:hover .cross {
-            fill: $color-red;
-            stroke: $color-red;
-            stroke-width: .5;
-        }
-    }
-
-    .cross {
-        fill: $color-secondary;
-        transition: all .2s ease;
-        stroke-opacity: 1;
-    }
 
 
 }

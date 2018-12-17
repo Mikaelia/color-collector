@@ -10,6 +10,7 @@ const PaletteControls = ({
   visibility = {},
   onToggleVisibility = f => f,
   onNewPalette = f => f,
+  onRemovePalette = f => f,
   onAddPaletteColors = f => f,
   onSelectPalette = f => f,
   onSelectPColor = f => f,
@@ -134,7 +135,11 @@ const PaletteControls = ({
             visibility.palettes ? "palette-controls__gallery" : "hidden"
           }
         >
-          <PaletteList palettes={palettes} onSelectPColor={onSelectPColor} />
+          <PaletteList
+            palettes={palettes}
+            onRemovePalette={onRemovePalette}
+            onSelectPColor={onSelectPColor}
+          />
         </div>
         {selectedPColors.length > 1 && visibility.palettes ? (
           <button

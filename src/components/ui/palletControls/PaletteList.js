@@ -1,7 +1,11 @@
 import React from "react";
 import Palette from "./Palette";
 
-const PaletteList = ({ palettes = [], onSelectPColor }) => {
+const PaletteList = ({
+  palettes = [],
+  onSelectPColor = f => f,
+  onRemovePalette = f => f
+}) => {
   return (
     <div className="palette-view__container">
       {palettes.length === 0 ? (
@@ -12,6 +16,7 @@ const PaletteList = ({ palettes = [], onSelectPColor }) => {
         palettes.map(palette =>
           palette.colors.length !== 0 ? (
             <Palette
+              onRemovePalette={() => onRemovePalette(palette.id)}
               key={palette.id}
               {...palette}
               onSelect={cid => {

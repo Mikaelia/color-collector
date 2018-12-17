@@ -24,9 +24,7 @@ const Color = ({
         />
         <label htmlFor={`styled-checkbox--${title}`} />
       </div>
-      <button className="color-card__btn-remove" onClick={onRemove}>
-        <RemoveButton />
-      </button>
+      <RemoveButton className="btn-remove" onClick={onRemove} />
     </div>
     <h1
       style={{ textTransform: "uppercase" }}

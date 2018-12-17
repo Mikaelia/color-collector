@@ -15,6 +15,7 @@ import {
   toggleVisibility,
   selectPColor,
   removePaletteColors,
+  removePalette,
   removeAlert,
   addAlert
 } from "../actions";
@@ -68,6 +69,9 @@ export const Palettes = connect(
   dispatch => ({
     onNewPalette(paletteObj) {
       dispatch(savePalette(paletteObj));
+    },
+    onRemovePalette(id) {
+      dispatch(removePalette(id));
     },
     onAddPaletteColors(id, colors) {
       dispatch(addPaletteColors(id, colors));
