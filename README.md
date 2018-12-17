@@ -8,6 +8,8 @@
 
 ### ScreenShots
 
+> Links Coming Soon
+
 ![alt text](./screenshots/mobileView.png)
 ![alt text](./screenshots/desktopView.png)
 ![alt text](./screenshots/colorCardView.png)
@@ -72,7 +74,7 @@ _Future_
 
 `npm start`
 
-#### Background
+## Background and File Organization
 
 Although the size of this project did not require the use of Redux, it served as a great challenge for me to practice state management using this library. Color Collector helped me think about state management more strategically. It was interesting trying to determine how to maximize my use of presentational components (I still have a lot to learn!) and how centralize my state, break it into parts, and design reducers that would manipulate the state in the way that I wanted.
 
