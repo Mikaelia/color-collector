@@ -322,19 +322,6 @@ input {
     opacity: 0;
     font-size: 2rem;
     transition: all .2s ease-out; }
-  .color-card__btn-remove, .color-card__btn-remove:visited, .color-card__btn-remove:active {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    text-decoration: none; }
-    .color-card__btn-remove:hover .cross, .color-card__btn-remove:visited:hover .cross, .color-card__btn-remove:active:hover .cross {
-      fill: #e62e1a;
-      stroke: #e62e1a;
-      stroke-width: .5; }
-  .color-card .cross {
-    fill: #00bcd4;
-    transition: all .2s ease;
-    stroke-opacity: 1; }
 
 .star {
   cursor: pointer;
@@ -496,6 +483,9 @@ input {
   display: flex;
   flex-wrap: wrap; }
 
+.palette__button {
+  align-self: flex-end; }
+
 .palette-color__container {
   margin: .5rem;
   height: 100%;
@@ -550,7 +540,7 @@ input {
   border-radius: 0.2rem;
   padding: 3rem 2rem;
   padding: 7rem 0 5rem 0;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   background: #1f2529;
   width: 100%;
   height: 100%;
@@ -724,7 +714,7 @@ input {
     @media only screen and (min-width: 48.75em) {
       .scroll-button__icon {
         height: 3rem;
-        width: 4rem; } }
+        width: 2rem; } }
     .scroll-button__icon path {
       fill: #e91e63; }
   .scroll-button__heading {
@@ -732,6 +722,25 @@ input {
     transition: all .2s ease-in;
     color: #e91e63;
     text-transform: uppercase; }
+
+.btn-remove,
+.btn-remove:visited,
+.btn-remove:active {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none; }
+  .btn-remove:hover .cross,
+  .btn-remove:visited:hover .cross,
+  .btn-remove:active:hover .cross {
+    fill: #e62e1a;
+    stroke: #e62e1a;
+    stroke-width: .5; }
+
+.cross {
+  fill: #00bcd4;
+  transition: all .2s ease;
+  stroke-opacity: 1; }
 
 .alert-container {
   display: flex;
@@ -807,19 +816,20 @@ input {
     .color-list > :nth-child(odd) .styled-checkbox:hover + label:before {
       background: #00bcd4; }
   .color-list__scroll-button-container--top {
+    position: absolute;
     display: flex;
-    top: 5rem;
-    right: 50%;
+    top: -3rem;
+    right: calc(50% - 4rem);
     background: transparent !important; }
     @media only screen and (min-width: 31.25em) {
       .color-list__scroll-button-container--top {
         display: block;
         position: absolute;
         top: 1rem;
-        right: 1rem; } }
+        right: 0rem; } }
     @media only screen and (min-width: 48.75em) {
       .color-list__scroll-button-container--top {
-        right: -1rem; } }
+        right: -2rem; } }
   .color-list__scroll-button-container--bottom {
     position: absolute;
     bottom: 3rem;
