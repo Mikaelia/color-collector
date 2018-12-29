@@ -7,7 +7,8 @@ export const addColor = (title, color) => ({
   id: v4(),
   title,
   color,
-  timestamp: new Date().toString()
+  timestamp: new Date().toString(),
+  selected: false
 });
 
 /// ---> Color List Actions

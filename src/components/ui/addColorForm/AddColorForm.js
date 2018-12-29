@@ -52,7 +52,12 @@ const AddColorForm = ({
   return (
     <div className="color-saver">
       <section className="color-saver__color-select ">
-        <h2 className="heading--md fw-light u-mt-lg u-mb-lg">Choose a Color</h2>
+        <h2
+          className="heading--md fw-light u-mt-lg u-mb-lg"
+          style={{ textTransform: "uppercase" }}
+        >
+          1. Choose a Color
+        </h2>
         <ColorPicker setNewColor={setNewColor} />
       </section>
       <p className="heading--sm fw-light u-mb-lg">Or enter hex:</p>
@@ -64,7 +69,7 @@ const AddColorForm = ({
             type="text"
           />
           <p className="heading--sm fw-light u-mb-lg u-mt-lg">
-            Name your color
+            2. Name your color
           </p>
           <input
             // set using function because it is stateless,

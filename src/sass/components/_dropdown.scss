@@ -9,10 +9,10 @@
     border-bottom: 2px solid $color-secondary;
 
     border-radius: $border-radius;
-    background: $color-white;
+    background: $color-primary-light;
     text-transform: uppercase;
     font-size: $font-md;
-    color: $color-primary-dark;
+    color: $color-white;
     display: flex;
     flex-direction: column;
 
@@ -22,7 +22,7 @@
         position: relative;
         height: 100%;
         width: 100%;
-        background: $color-white;
+        background: $color-primary-light;
         z-index: 10;
         border-top-right-radius: .5rem;
         border-top-left-radius: .5rem;
@@ -33,9 +33,10 @@
     }
 
     &__list {
+        color: $color-primary-dark;
         position: absolute;
         width: 100%;
-        background: $color-white;
+        background: $color-primary-lightest;
         z-index: 5;
         animation: drop .5s linear forwards;
         box-shadow: 1px 5px 5px rgba(128, 128, 128, 0.158);
@@ -85,6 +86,7 @@
 
 .arrow {
     transition: transform .3s;
+
 }
 
 .up {

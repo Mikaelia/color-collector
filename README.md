@@ -119,8 +119,9 @@ My stylesheets are divided into `component`, `modules` and `partials` folders. T
 
 Redux-specific:
 
+- _containers_
+  - Contains all of the smart components that connect callbacks that trigger actions that change state in redux store to child components
 - _store_
-
   - `index.js`
     - Combines reduces, connects store to reducers, initial state data, Redux devtools via store factory function
   - `reducers.js`
