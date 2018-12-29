@@ -31,6 +31,8 @@ Enjoy!
 
 #### Features
 
+Please note that I have disabled localstorage so your colors will be replaced with initial state data on refresh!
+
 _Current_
 
 - [x] Ability to name and save color gradients obtained via color slider component
@@ -39,15 +41,14 @@ _Current_
 - [x] Option to create a new palette with selected color, or add colors to a pre-existing palette.
 - [x] Option to remove colors from saved color palette
 - [x] Responsive layout, with the ability to display and hide palette controls panel
+- [x] Ability to delete palette
+- [x] Feedback on form submission
 
 _Future_
 
 - [ ] Auto CSS generator for your saved color palettes
 - [ ] Ability to sort saved colors based on time, rating, etc
 - [ ] Ability to deselect colors on off-click
-- [ ] Feedback on form submission
-- [ ] Ability to delete palette
-- [ ] Input validation on palette name submission
 - [ ] Fix bug where long palette list expands under cards
 - [ ] Better visual direction for users on how to select colors
 - [ ] Functionality to accept values other than hex
