@@ -10,10 +10,9 @@ https://guarded-atoll-68036.herokuapp.com/
 
 > Links Coming Soon
 
-![alt text](./screenshots/mobileView.png)
-![alt text](./screenshots/desktopView.png)
-![alt text](./screenshots/colorCardView.png)
-![alt text](./screenshots/shredLoginPage.png)
+![intro](./screenshots/intro.png)
+![color-cards](./screenshots/colors.png)
+![palette options](./screenshots/paletteOptions.png)
 
 ### How to Use:
 
