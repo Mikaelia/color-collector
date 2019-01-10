@@ -8,9 +8,9 @@ https://guarded-atoll-68036.herokuapp.com/
 
 ### ScreenShots
 
-![intro](./screenShots/intro.png)
-![color-cards](./screenShots/colors.png)
-![palette options](./screenShots/paletteOptions.png)
+![intro](public/screenShots/intro.png)
+![color-cards](public/screenShots/colors.png)
+![palette options](public/screenShots/paletteOptions.png)
 
 ### How to Use:
 
