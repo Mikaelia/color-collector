@@ -8,8 +8,6 @@ https://guarded-atoll-68036.herokuapp.com/
 
 ### ScreenShots
 
-> Links Coming Soon
-
 ![intro](./screenshots/intro.png)
 ![color-cards](./screenshots/colors.png)
 ![palette options](./screenshots/paletteOptions.png)
