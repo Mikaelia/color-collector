@@ -12,6 +12,7 @@ import { v4 } from "uuid";
   "selected": false
 }
  */
+
 export const color = (state = {}, action) => {
   switch (action.type) {
     case C.ADD_COLOR:
@@ -120,14 +121,22 @@ export const palettes = (state = [], action) => {
     case C.REMOVE_PALETTE:
       return state.filter(palette => palette.id !== action.id);
     case C.ADD_PALETTE_COLORS:
-      const deselectColors = action.colors.map(color => ({
+      const deselectedColors = action.colors.map(color => ({
         ...color,
         selected: false
       }));
+
+      const cache = {};
+
       return state.map(palette => {
-        return palette.id !== action.id
-          ? palette
-          : { ...palette, colors: [...palette.colors, ...deselectColors] };
+        if (palette.id === action.id) {
+          palette.colors.map(obj => (cache[obj.id] = obj));
+          deselectedColors.forEach(obj => (cache[obj.id] = obj));
+          const uniqueColors = Object.values(cache);
+          return { ...palette, colors: uniqueColors };
+        } else {
+          return palette;
+        }
       });
 
     case C.SELECT_PCOLOR:
