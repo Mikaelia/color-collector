@@ -1,4 +1,4 @@
-# Color Collector
+# ColorVerse
 
 > A web application for creating, rating, and saving colors
 
@@ -14,11 +14,11 @@ https://guarded-atoll-68036.herokuapp.com/
 
 ### How to Use:
 
-- Adjust slider and choose color from gradient options below, OR
+1. Adjust slider and choose color from gradient options below, OR
   enter hex code of the color that you'd like to save.
-- Name your color ("primary-light", "blue-dark" etc.)
-- Click 'Add' to save your color. Selection will appear in color cards collection below.
-- You may delete color cards, or add them to a new or existing palette (click "Show Palette Options")
+2. Name your color ("primary-light", "blue-dark" etc.)
+3.  Click 'Add' to save your color. Selection will appear in color cards collection below. (if palette view is already open--and it will be by default--hit the pink arrow to zoom to color cards)
+4. You may delete color cards, or add them to a new or existing palette (click "Show Palette Options" if palette view is closed)
   - Once you have expanded your palette control menu, select an
     existing palette from the "My Palettes" dropdown, and hit "Update Palette" to add selected color cards to the palette selected.
   - To create an entirely new palette with selected colors, enter the palette name, and hit "Submit". Your new palette will appear in the Palette View.
