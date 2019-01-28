@@ -19,7 +19,7 @@ import {
   removeAlert,
   addAlert
 } from "../actions";
-import AlertsOverlayComponent from "./AlertsOverlay";
+import AlertsOverlayComponent from "./alerts/AlertsOverlay";
 
 // Connects visibility state, actions to AddColorForm
 export const NewColor = connect(
