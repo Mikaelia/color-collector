@@ -2,7 +2,7 @@ import React from "react";
 import PaletteList from "./PaletteList";
 import Dropdown from "./Dropdown";
 import { OpenCloseButton, ScrollButton } from "../Buttons";
-import { ChevronDown } from "../LayoutIcons";
+import { ChevronUp } from "../LayoutIcons";
 
 const PaletteControls = ({
   palettes = [],
@@ -66,10 +66,10 @@ const PaletteControls = ({
     >
       <div className="palette-controls__scroll-button-container">
         <ScrollButton
-          scrollTargetMessage="Colors"
-          scrollTargetElement=".color-list"
+          scrollTargetMessage="Top"
+          scrollTargetElement=".color-saver"
         >
-          <ChevronDown />
+          <ChevronUp />
         </ScrollButton>
       </div>
       <h1 className="palette-controls__heading heading--md fw-light u-mb-hg">

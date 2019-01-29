@@ -3,12 +3,7 @@ import PropTypes from "prop-types";
 import ColorPicker from "./ColorPicker";
 import { OpenCloseButton } from "../Buttons";
 
-const AddColorForm = ({
-  visibility,
-  onToggleVisibility = () => console.log("hi"),
-  onNewColor = f => f,
-  addAlert = f => f
-}) => {
+const AddColorForm = ({ onNewColor = f => f, addAlert = f => f }) => {
   let _title,
     _color = { hex: "#000000" },
     _colorCode;
@@ -81,12 +76,6 @@ const AddColorForm = ({
 
           <button className="color-saver__button u-mb-md">ADD</button>
         </form>
-        <OpenCloseButton
-          displayOpen={visibility.paletteControls}
-          openMessage="Palette Options?"
-          closedMessage="Hide Palette Options"
-          toggleVisibility={onToggleVisibility}
-        />
       </section>
     </div>
   );

@@ -28,9 +28,6 @@ export const NewColor = connect(
   }),
   dispatch => ({
     // Here we are binding out action creators
-    onToggleVisibility() {
-      dispatch(toggleVisibility("paletteControls"));
-    },
     onNewColor(title, color) {
       dispatch(addColor(title, color));
     },
@@ -55,6 +52,9 @@ export const Colors = connect(
     },
     onSelect(id) {
       dispatch(selectColor(id));
+    },
+    onToggleVisibility() {
+      dispatch(toggleVisibility("paletteControls"));
     }
   })
 )(ColorList);

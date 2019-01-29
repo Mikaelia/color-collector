@@ -7,8 +7,8 @@ const App = () => (
   <div className="app">
     <Alerts />
     <NewColor />
-    <Palettes />
     <Colors />
+    <Palettes />
   </div>
 );
 

@@ -1,14 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Color from "./Color";
-import { ScrollButton } from "../Buttons";
+import { ScrollButton, OpenCloseButton } from "../Buttons";
 import { ChevronUp, ChevronDown } from "../LayoutIcons";
 
 const ColorList = ({
   colors = [],
   onRate = f => f,
   onRemove = f => f,
-  onSelect = f => f
+  onSelect = f => f,
+  visibility,
+  onToggleVisibility = () => console.log("hi")
 }) => (
   <div className="color-list">
     <div className="color-list__scroll-button-container--top">
@@ -19,7 +21,7 @@ const ColorList = ({
         <ChevronUp />
       </ScrollButton>
       <ScrollButton
-        scrollTargetElement=".color-list:last-child"
+        scrollTargetElement=".palette-controls__heading"
         scrollTargetMessage="Bottom"
       >
         <ChevronDown />
@@ -46,6 +48,17 @@ const ColorList = ({
         />
       ))
     )}
+    <div
+      class="button-container"
+      style={{ position: "absolute", bottom: "-3.5rem" }}
+    >
+      <OpenCloseButton
+        displayOpen={visibility.paletteControls}
+        openMessage="Palette Options?"
+        closedMessage="Hide Palette Options"
+        toggleVisibility={onToggleVisibility}
+      />
+    </div>
   </div>
 );
 
