@@ -43,7 +43,6 @@
 
         &:hover span {
             opacity: 1;
-            color: $color-primary-light;
         }
 
         @include respond(medium) {
@@ -51,10 +50,11 @@
         }
     }
 
-    &__color span {
+    &__text {
         font-weight: $font-light;
         opacity: 0;
         font-size: 2rem;
+        animation: colorChange 5s infinite;
 
         transition: all .2s ease-out;
     }

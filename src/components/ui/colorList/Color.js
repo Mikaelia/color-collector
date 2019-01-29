@@ -33,7 +33,7 @@ const Color = ({
       {title}
     </h1>
     <div className="color-card__color" style={{ backgroundColor: color }}>
-      <span>{color}</span>
+      <span className="color-card__text">{color}</span>
     </div>
     <StarRating starsSelected={rating} onRate={onRate} />
   </section>
