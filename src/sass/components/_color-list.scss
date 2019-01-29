@@ -9,13 +9,13 @@
     position: relative;
     margin-bottom: 7rem;
 
-    &>:nth-child(odd) {
-        background: darken($color-primary-dark, 2%);
+    // &>:nth-child(odd) {
+    //     background: darken($color-primary-dark, 2%);
 
-        & .styled-checkbox:hover+label:before {
-            background: ($color-secondary);
-        }
-    }
+    //     & .styled-checkbox:hover+label:before {
+    //         background: ($color-secondary);
+    //     }
+    // }
 
     &__scroll-button-container--top {
         position: absolute;
